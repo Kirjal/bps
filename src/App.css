@@ -6,27 +6,28 @@
   margin: 0;
 }
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.5; /* helps with dyslexia */
+  -webkit-font-smoothing: antialiased; /* thanks macOS, for apparently still using subpixel antialiasing that makes text blurry */
 }
 img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
+  display: block; /* much prefer having these as blocks, instead of inline elements */
 }
 input, button, textarea, select {
-  font: inherit;
+  font: inherit; /* prevent these elements from not behaving wrong with fonts */
 }
 p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
+  overflow-wrap: break-word; /* no overflow from long words in a tight container */
+  hyphens: auto;
 }
 p {
-  text-wrap:pretty;
+  text-wrap: pretty; /* ensures the final line contains at least two words to avoid cases of a paragraph ending with a very small word or character */
 }
 h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
+  line-height: 1.2; /* doesn't require 1.5 to help with dyslexia, as headers should not be 27 lines high */
+  text-wrap: balance; /* balances the width of multiple lines of text */
 }
 #root {
-  isolation: isolate;
+  isolation: isolate; /* #root being the base div of react, this should prevent stacking context bugs and avoid z-index checks with modals, dropdowns, tooltips... */
 }
 /*********************************************/
 
