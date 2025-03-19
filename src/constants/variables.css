@@ -1,0 +1,51 @@
+/* variables *********************************/
+
+#root{
+    /*structure elements*/
+    --background: #f5f5f5;
+    --footer-background: #1d396c;
+    --header-gradient: linear-gradient(0.5turn, #f5f5f5, #f5f5f500);
+    --footer-gradient: linear-gradient(1turn, #f5f5f5, #f5f5f500);
+    --bps-yellow: #ffad05;
+    --bps-light-blue: #b3d3f8;
+    --bubble-color: #bdf8;
+
+    /*menu elements*/
+    --burger-button: #1f396c;
+    --burger-text: #1f396c;
+    --menu-background: #1f396c;
+    --menu-text: #f5f5f5;
+    --menu-button-hover: #485a80;
+
+    /*titles*/
+    --title-text: #485a80;
+    --title-background: #f5f5f5;
+    --title-outline: #b3d3f8;
+    --title-gradient: linear-gradient(0.45turn, #b3d3f855 0%, #f5f5f500 30%);
+
+    /*content*/
+    --base-text: #1f396c;
+    --text-background: #f5f5f588;
+
+    /*buttons*/
+    --button-base-outline: #ffad05;
+    --button-hover-outline: #b3d3f8;
+    --button-background: #1f396c;
+    --button-text: #f5f5f5;
+    --button-arrow-background: #f5f5f5;
+    --button-arrow-outline-base: #ffad05;
+    --button-arrow-outline-hover: #b3d3f8;
+    --button-emphasis-background: #f5f5f5;
+
+    /*form inputs*/
+    --input-background: #f5f5f5;
+    --input-placeholder-text: #789;
+    --input-text: #1f396c;
+    --input-outline-base: #b3d3f8;
+    --input-outline-focus: #1f396c;
+    --input-outline-valid: #b9dd65;
+    --input-invalid: #f76;
+    --checkbox-outline-base: #b3d3f8;
+    --checkbox-outline-checked: #ffad05;
+    --checkbox-checkmark: #1f396c;
+}
