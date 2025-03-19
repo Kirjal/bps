@@ -41,10 +41,19 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--base-text);
   background-color: var(--background);
   overflow-x: hidden;
+  height: 100vh;
 }
 
-.gradient-test{
-  height: 200px;
+header, main, footer{
+  position: relative;
+}
+
+.title{
+  position: relative;
+}
+
+.title-gradient{
+  height: 80px;
   width: 100%;
   max-width: 320px;
   background: var(--title-gradient);
@@ -61,7 +70,7 @@ h1, h2{
   color: var(--title-text);
   background-color: var(--title-background);
   border-radius: 0 200px 200px 0;
-  box-shadow: 4px 6px var(--title-outline);
+  box-shadow: 3px 5px var(--title-outline);
   padding: 20px 20px 8px 4px;
 }
 
@@ -79,8 +88,21 @@ h1, h2{
   background: var(--footer-gradient);
 }
 
+.text{
+  padding: 30px 20px;
+  margin: 0 20px;
+  background-color: var(--text-background);
+  border-radius: 15px;
+}
 
-/** stuff that was there by default from react **/
+
+
+
+
+
+
+
+/** stuff that was there by default from react ***********************************************/
 
 /*.App {
   text-align: center;

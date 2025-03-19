@@ -3,13 +3,15 @@
 .bubble-container{
     margin: auto;
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 200px;
+    left: calc(50vw - 100px);
 }
 
 .bubble-container > div{
-    position: fixed;
-    top: 0;
-    left: calc(50vw - 100px);
-    width: 200px;
+    position: relative;
+    transition: top 0.5s;
 }
 
 .bubble-container .front{
