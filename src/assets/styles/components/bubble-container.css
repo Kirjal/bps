@@ -1,0 +1,58 @@
+@import url(../../../constants/variables.css);
+
+.bubble-container{
+    margin: auto;
+    overflow: hidden;
+}
+
+.bubble-container > div{
+    position: fixed;
+    top: 0;
+    left: calc(50vw - 100px);
+    width: 200px;
+}
+
+.bubble-container .front{
+    height: 3000px;
+}
+
+.bubble-container .mid{
+    height: 2500px;
+}
+
+.bubble-container .back{
+    height: 2000px;
+}
+
+.bubble-container.home > div{
+    top: 0;
+}
+
+.bubble-container.services > .front{
+    top: calc(50vh - 1500px);
+}
+.bubble-container.services > .mid{
+    top: calc(50vh - 1250px);
+}
+.bubble-container.services > .back{
+    top: calc(50vh - 1000px);
+}
+
+.bubble-container.contact > .front{
+    top: calc(100vh - 3000px);
+}
+.bubble-container.contact > .mid{
+    top: calc(100vh - 2500px);
+}
+.bubble-container.contact > .back{
+    top: calc(100vh - 2000px);
+}
+  
+/*.bubble{
+    position: absolute;
+    top: 0;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: var(--bubble-color);
+}*/
