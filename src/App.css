@@ -1,5 +1,6 @@
 @import url("./constants/variables.css");
 @import url("./assets/styles/components/bubble-container.css");
+@import url("./assets/styles/components/header.css");
 
 /***** CSS RESET ***************************/
 
@@ -48,8 +49,19 @@ header, main, footer{
   position: relative;
 }
 
-.title{
+.title-container{
   position: relative;
+  overflow: hidden;
+  width: 100vw;
+  max-width: 600px;
+}
+
+.title{
+  background-color: var(--title-background);
+  border-radius: 0 200px 200px 0;
+  box-shadow: 3px 5px var(--title-outline);
+  position: relative;
+  left: -4px;
 }
 
 .title-gradient{
@@ -61,16 +73,12 @@ header, main, footer{
 
 h1, h2{
   text-align: center;
-  position: relative;
-  left: -4px;
+  margin-right: 0;
+  margin-left: auto;
+  color: var(--title-text);
   font-size: 1.2em;
   font-weight: bold;
-  width: 100%;
-  max-width: 350px;
-  color: var(--title-text);
-  background-color: var(--title-background);
-  border-radius: 0 200px 200px 0;
-  box-shadow: 3px 5px var(--title-outline);
+  width: 320px;
   padding: 20px 20px 8px 4px;
 }
 

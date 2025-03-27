@@ -7,18 +7,40 @@
     top: 0;
     width: 300px;
     left: calc(50vw - 150px);
-    --height-front: 6000px;
-    --height-mid: 4000px;
-    --height-back: 2000px;
+    --height-front: 8000px;
+    --height-mid: 6000px;
+    --height-back: 4000px;
 }
 
-.bubble-container > div{
+/*gradients above and below bubbles display*/
+.bg-gradients{
+    height: 100vh;
+    width: 300px;
     position: fixed;
-    width: 100%;
-    transition: top 3s cubic-bezier(0.1, 0.8, 0, 1);
+    top: 0;
+    left: calc(50vw - 150px);
+    z-index: 10;
+    background: linear-gradient(#f5f5f5ff, #f5f5f500 20%, #f5f5f500 80%, #f5f5f5ff);
+}
+
+/*this one is actually located in <main> but relates to bubbles display as it needs to not show bubbles directly under the title*/
+.main-bg-gradient{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    left: calc(50vw - 150px);
+    background: linear-gradient(#f5f5f5ff, #f5f5f500);
+}
+
+.bubble-container .front, .bubble-container .mid, .bubble-container .back{
+    position: fixed;
+    width: 300px;
+    transition: top 5s cubic-bezier(0.1, 0.8, 0, 1);
     top: 0;
 }
 
+/*bubbles offset depending on current displayed page*/
 .bubble-container .front{
     height: var(--height-front);
 }
@@ -50,7 +72,8 @@
 .bubble-container.contact > .back{
     top: calc(100vh - var(--height-back));
 }
-  
+
+/*bubble style*/
 .bubble{
     position: absolute;
     border-radius: 50%;
