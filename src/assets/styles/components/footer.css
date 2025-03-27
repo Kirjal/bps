@@ -1,0 +1,41 @@
+@import url(../../../constants/variables.css);
+
+footer{
+    height: 500px;
+    width: 100vw;
+    background-color: var(--footer-background);
+    color: var(--footer-text);
+}
+
+.footer-content{
+    padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.footer-logo{
+    height:80px;
+    width:160px;
+    background-color: var(--background);
+}
+
+footer .yellow-bar{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 5px;
+    background-color: var(--bps-yellow);
+}
+
+.footer-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-buttons button{
+    width: 100px;
+}

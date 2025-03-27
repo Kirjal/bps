@@ -1,6 +1,7 @@
 @import url("./constants/variables.css");
 @import url("./assets/styles/components/bubble-container.css");
 @import url("./assets/styles/components/header.css");
+@import url("./assets/styles/components/footer.css");
 
 /***** CSS RESET ***************************/
 
@@ -97,10 +98,22 @@ h1, h2{
 }
 
 .text{
+  position: relative;
   padding: 30px 20px;
   margin: 0 20px;
   background-color: var(--text-background);
   border-radius: 15px;
+}
+
+main h3{
+  color: var(--title-text);
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 10px auto;
+}
+
+main p{
+  color: var(--base-text);
 }
 
 
@@ -114,7 +127,7 @@ h1, h2{
 
 /*.App {
   text-align: center;
-}*/
+}
 
 .App-logo {
   height: 40vmin;
@@ -127,7 +140,7 @@ h1, h2{
   }
 }
 
-/*.App-header {
+.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -136,11 +149,11 @@ h1, h2{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}*/
+}
 
-/*.App-link {
+.App-link {
   color: #61dafb;
-}*/
+}
 
 @keyframes App-logo-spin {
   from {
@@ -149,4 +162,4 @@ h1, h2{
   to {
     transform: rotate(360deg);
   }
-}
+}*/

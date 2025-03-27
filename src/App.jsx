@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import _logo from './logo.svg';
 import './App.css';
 import { Link } from 'react-router-dom';
 import Routes from "./routes/Routes";
@@ -38,6 +38,20 @@ function App() {
   })
   /**********************************************************************************************/
 
+  const logo = _logo;
+
+  let navOpen = false;
+  const toggleNav = () => {
+    const nav = document.getElementById("nav")
+    if(navOpen){
+      navOpen = false;
+      nav.classList.remove("nav-open")
+    }
+    else{
+      navOpen = true;
+      nav.classList.add("nav-open")
+    }
+  }
   
   return (
     <div className="App">
@@ -53,20 +67,16 @@ function App() {
           {generateBubblesBack}
         </div>
       </div>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-          
+      <header>
+        <div className="light-blue-bar"></div>
+        <img src={logo} className="header-logo" alt="logo de l'entreprise" />
+        <button style={{height: 20 + "px", width: 20 + "px", backgroundColor: "#ff0", padding: 0}} onClick={toggleNav}></button>
+        <nav id="nav">
+          <button><Link to={URL_HOME} onClick={()=>updateBubbleMode("home")}>accueil</Link></button>
+          <button><Link to={URL_SERVICES} onClick={()=>updateBubbleMode("services")}>services</Link></button>
+          <button><Link to={URL_CONTACT} onClick={()=>updateBubbleMode("contact")}>contact</Link></button>
+        </nav>
+        <div className="yellow-bar"></div>
       </header>
       <main>
         <div className="main-bg-gradient"></div>
@@ -77,14 +87,27 @@ function App() {
           <div className="title-gradient"></div>
         </div>
         <div className="text">
-          <p>aaaaaaaaaaaaaaaaaaa<br/>aaaaaaa</p>
+          <h3>Lorem ipsum dolor</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, voluptas necessitatibus? Eum ducimus fugiat sit unde voluptatem labore odit, minus numquam deleniti laboriosam at quas quod, quidem esse, quasi vero.</p>
         </div>
         <Routes />
-        <button><Link to={URL_HOME} onClick={()=>updateBubbleMode("home")}>home</Link></button>
-        <button><Link to={URL_SERVICES} onClick={()=>updateBubbleMode("services")}>services</Link></button>
-        <button><Link to={URL_CONTACT} onClick={()=>updateBubbleMode("contact")}>contact</Link></button>
       </main>
-      <footer></footer>
+      <footer>
+        <div className="yellow-bar"></div>
+        <div className="footer-content">
+          <img src={logo} className="footer-logo" alt="logo de l'entreprise"/>
+          <div className="footer-buttons">
+            <button><Link to={URL_HOME} onClick={()=>updateBubbleMode("home")}>accueil</Link></button>
+            <button><Link to={URL_SERVICES} onClick={()=>updateBubbleMode("services")}>services</Link></button>
+            <button><Link to={URL_CONTACT} onClick={()=>updateBubbleMode("contact")}>contact</Link></button>
+          </div>
+          <div className="legal">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui autem architecto, sunt sequi labore rerum maxime tenetur dolorem nihil sapiente vitae commodi reiciendis. Eum provident modi et, quaerat nesciunt deleniti.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

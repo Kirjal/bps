@@ -2,4 +2,48 @@
 
 header{
     background-color: var(--background);
+    height: 110px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+header .light-blue-bar{
+    background-color: var(--bps-light-blue);
+    height: 4px;
+    width: 75%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header .yellow-bar{
+    background-color: var(--bps-yellow);
+    height: 5px;
+    width: 65%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.header-logo{
+    height:80px;
+    width:160px;
+    background-color: var(--footer-background);
+    margin-left: 15px;
+}
+
+nav{
+    width: 100px;
+    display: flex;
+    flex-flow: column;
+}
+
+nav button{
+    margin: auto;
+    width: 80px;
+}
+
+nav.nav-open{
+    background-color:#f00;
 }
