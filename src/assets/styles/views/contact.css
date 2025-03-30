@@ -15,6 +15,7 @@ form{
 .emergency-check{
     display: flex;
     flex-direction: column;
+    margin-bottom: 0.9em;
 }
 .emergency-check label{
     display: flex;
@@ -27,15 +28,24 @@ form{
 .business-check-title{
     display: flex;
 }
+
+#address{
+    margin-bottom: 0.9em;
+}
+
+.business-check-container{
+    margin-top: 10px;
+    margin-bottom: 0.9em;
+}
+
+#info{
+    margin-bottom: 0.9em;
+}
 /*******************************************************/
 
 /*fonts adjustments***********************************/
 .notice{
     font-style: italic;
-}
-
-.form-input{
-    color: var(--input-text);
 }
 
 .form-input::placeholder{
@@ -49,11 +59,24 @@ label:not(.small-label){
     font-weight: bold;
     margin: 10px 0 0 15px;
 }
+
+/*the :not is to prevent styling a <span> that is used to position a specific label correctly*/
+label span:not(.business-check-title span){
+    font-weight: normal;
+    font-style: italic;
+}
+
+.error{
+    display: block;
+    font-size: 0.9em;
+    font-style: italic;
+    font-weight: bold;
+    height: 1em;
+    margin: 0 0 3px;
+    color: var(--input-invalid);
+}
 /*****************************************************/
 
-.business-check-container{
-    margin-top: 10px;
-}
 
 /*display of the input list*/
 .business-options-container{
@@ -73,19 +96,18 @@ label:not(.small-label){
     padding-top: 5px;
 }
 
-/*the :not is to prevent styling a <span> that is used to position a specific label correctly*/
-label span:not(.business-check-title span){
-    font-weight: normal;
-    font-style: italic;
-}
 
-.business-yellow-bar{
-    background-color: var(--bps-yellow);
+.business-bar{
+    background-color: var(--checkbox-outline-checked);
     height: 100%;
     width: 3px;
     border-radius: 0 0 5px 5px;
     /*alignment to the checkbox above*/
     margin: 0 20px 0 12px;
+    transition: background-color 0.4s;
+}
+.business-bar.hidden{
+    background-color: var(--checkbox-outline-base);
 }
 
 /*slight offset to align with the yellow bar*/
@@ -119,15 +141,15 @@ label span:not(.business-check-title span){
     height: 17px;
     border-radius: 3px;
     background-color: #fff0;
-    /*scale 0 to hide the checked outline*/
-    transform: scale(0);
+    opacity: 0;
+    transition: opacity 0.4s;
     /*checked outline*/
     box-shadow: inset 0 0 0 3px var(--checkbox-outline-checked);
 }
 
 /*scale 1 to show it above the base checkbox*/
 .form-checkbox:checked::before{
-    transform: scale(1);
+    opacity: 1;
 }
 
 .checkmark{
@@ -136,18 +158,84 @@ label span:not(.business-check-title span){
     position: absolute;
     top: 3px;
     left: 6px;
-    display: none;
+    opacity: 0;
+    transition: opacity 0.1s;
 }
 .form-checkbox:checked + .checkmark{
-    display: block;
+    opacity: 1;
 }
 
-.error{
-    display: block;
-    font-size: 0.9em;
-    font-style: italic;
-    font-weight: bold;
-    height: 1em;
-    margin: 0 0 3px;
-    color: var(--input-invalid);
+.form-input{
+    height: 2em;
+    border-radius: 10px;
+    border: 2px solid var(--input-outline-base);
+    outline: none;
+    background-color: var(--input-background);
+    color: var(--input-text);
+    padding: 1px 10px 0;
+    resize: none;
+}
+#address{
+    min-height: 4em;
+}
+
+#info{
+    min-height: 10em;
+}
+
+.form-input:focus{
+    border-color: var(--input-outline-focus);
+}
+
+.invalid-input{
+    border-color: var(--input-invalid);
+}
+
+.button-container{
+    align-self: flex-end;
+    position: relative;
+    width: 160px;
+}
+
+.button-container button{
+    background-color: var(--button-background);
+    color: var(--button-text);
+    padding: 5px 20px 5px 5px;
+    text-align: center;
+    width: 120px;
+    border-radius: 2em;
+    position: relative;
+    border: 3px solid var(--button-base-outline);
+    transition: all 0.4s;
+}
+
+.button-container:hover button{
+    border-color: var(--button-hover-outline);
+    padding: 5px 5px 5px 20px;
+}
+
+.contact-blue-arrow{
+    opacity: 0;
+    transition: all 0.4s;
+    position: absolute;
+    top: -14px;
+    left: -50px;
+}
+
+.contact-yellow-arrow{
+    opacity: 1;
+    transition: all 0.4s;
+    position: absolute;
+    top: -14px;
+    right: 15px;
+}
+
+.button-container:hover button ~ .contact-blue-arrow{
+    opacity: 1;
+    left: -15px;
+}
+
+.button-container:hover button ~ .contact-yellow-arrow{
+    opacity: 0;
+    right: -15px;
 }

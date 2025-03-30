@@ -11,6 +11,10 @@
 *{
   margin: 0;
 }
+button{
+  border: 0;
+  box-shadow: none;
+}
 body {
   line-height: 1.5; /* helps with dyslexia */
   -webkit-font-smoothing: antialiased; /* thanks macOS, for apparently still using subpixel antialiasing that makes text blurry */
