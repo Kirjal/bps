@@ -1,0 +1,153 @@
+@import url("../../../constants/variables.css");
+
+/*elements structure**********************************/
+form{  
+    display: flex;
+    flex-direction: column;
+}
+
+.form-content h2{
+    text-align: center;
+    margin: auto;
+    width: auto;
+}
+
+.emergency-check{
+    display: flex;
+    flex-direction: column;
+}
+.emergency-check label{
+    display: flex;
+    position: relative;
+}
+.emergency-check p{
+    margin-left: 5px;
+}
+
+.business-check-title{
+    display: flex;
+}
+/*******************************************************/
+
+/*fonts adjustments***********************************/
+.notice{
+    font-style: italic;
+}
+
+.form-input{
+    color: var(--input-text);
+}
+
+.form-input::placeholder{
+    color: var(--input-placeholder-text);
+    font-style: italic;
+}
+
+/*:not to exclude the radio buttons' label, as they are styled differently*/
+label:not(.small-label){
+    color: var(--title-text);
+    font-weight: bold;
+    margin: 10px 0 0 15px;
+}
+/*****************************************************/
+
+.business-check-container{
+    margin-top: 10px;
+}
+
+/*display of the input list*/
+.business-options-container{
+    display: flex;
+    overflow: hidden;
+    transition: all 0.4s;
+    height: 135px;
+}
+.business-options-container.hidden{
+    height: 0;
+}
+
+.business-options{
+    display: flex;
+    flex-direction: column;
+    /*padding is given here as the above label has been brought down in .business-check-title label*/
+    padding-top: 5px;
+}
+
+/*the :not is to prevent styling a <span> that is used to position a specific label correctly*/
+label span:not(.business-check-title span){
+    font-weight: normal;
+    font-style: italic;
+}
+
+.business-yellow-bar{
+    background-color: var(--bps-yellow);
+    height: 100%;
+    width: 3px;
+    border-radius: 0 0 5px 5px;
+    /*alignment to the checkbox above*/
+    margin: 0 20px 0 12px;
+}
+
+/*slight offset to align with the yellow bar*/
+.business-check-title > label{
+    margin: 0;
+    transform: translateY(5px);
+    display: flex;
+    position: relative;
+}
+
+.form-checkbox{
+    /*appearance: none; allows styling of the default checkboxes*/
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--input-background);
+    margin: 0 5px;
+    width: 17px;
+    height: 17px;
+    border: 3px solid var(--checkbox-outline-base);
+    border-radius: 3px;
+    /*slight offset to align with text*/
+    transform: translateY(2px);
+    /*display grid to easily align the :before to the center of the checkbox*/
+    display: grid;
+    place-content: center;
+}
+
+.form-checkbox::before{
+    content: "";
+    width: 17px;
+    height: 17px;
+    border-radius: 3px;
+    background-color: #fff0;
+    /*scale 0 to hide the checked outline*/
+    transform: scale(0);
+    /*checked outline*/
+    box-shadow: inset 0 0 0 3px var(--checkbox-outline-checked);
+}
+
+/*scale 1 to show it above the base checkbox*/
+.form-checkbox:checked::before{
+    transform: scale(1);
+}
+
+.checkmark{
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    display: none;
+}
+.form-checkbox:checked + .checkmark{
+    display: block;
+}
+
+.error{
+    display: block;
+    font-size: 0.9em;
+    font-style: italic;
+    font-weight: bold;
+    height: 1em;
+    margin: 0 0 3px;
+    color: var(--input-invalid);
+}

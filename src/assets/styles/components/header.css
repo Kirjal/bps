@@ -27,9 +27,8 @@ header .yellow-bar{
 }
 
 .header-logo{
-    height:80px;
-    width:160px;
-    background-color: var(--footer-background);
+    height:83px;
+    width:162px;
     margin-left: 15px;
 }
 

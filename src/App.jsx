@@ -19,20 +19,20 @@ function App() {
   const initialBubbleMode = window.location.pathname;
 
   const setFirstBubbleMode = () => {
-    if(initialBubbleMode && initialBubbleMode=="/"){
+    if(initialBubbleMode && initialBubbleMode === "/"){
       updateBubbleMode("home");
     };
-    if(initialBubbleMode && initialBubbleMode=="/services"){
+    if(initialBubbleMode && initialBubbleMode === "/services"){
       updateBubbleMode("services");
     };
-    if(initialBubbleMode && initialBubbleMode=="/contact"){
+    if(initialBubbleMode && initialBubbleMode === "/contact"){
       updateBubbleMode("contact");
     }
   }
 
   useEffect(() => {
     setFirstBubbleMode();
-  }, []);
+  });
 
   
 
@@ -104,7 +104,7 @@ function App() {
           </div>
           <div className="title-gradient"></div>
         </div>
-        <div className="text">
+        <div className="content">
           <h3>Lorem ipsum dolor</h3>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, voluptas necessitatibus? Eum ducimus fugiat sit unde voluptatem labore odit, minus numquam deleniti laboriosam at quas quod, quidem esse, quasi vero.</p>
         </div>

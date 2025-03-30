@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*********************************************/
 .App{
-  font-family: Verdana, Helvetica, Tahoma, sans-serif;
+  font-family: Helvetica, Verdana, Tahoma, sans-serif;
   font-size: 1em;
   color: var(--base-text);
   background-color: var(--background);
@@ -97,11 +97,11 @@ h1, h2{
   background: var(--footer-gradient);
 }
 
-.text{
+.content{
   position: relative;
-  padding: 30px 20px;
-  margin: 0 20px;
-  background-color: var(--text-background);
+  padding: 20px;
+  margin: 0 10px;
+  background-color: var(--content-background);
   border-radius: 15px;
 }
 
