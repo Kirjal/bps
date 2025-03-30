@@ -1,8 +1,9 @@
-import _logo from './logo.svg';
+import logo from './assets/images/bps_logo_temp.png';
 import './App.css';
 import { Link } from 'react-router-dom';
 import Routes from "./routes/Routes";
 import { URL_CONTACT, URL_HOME, URL_SERVICES } from './constants/url';
+import { useEffect } from 'react';
 
 
 function App() {
@@ -10,11 +11,30 @@ function App() {
   /**bubble logic **************************************************************************/
 
   /**adds or remove a specific class to the container of the background bubbles to calculate Y axis offset (to give the illusion of a water current) */
-  /**did not find yet how to set the value on page load by using URL params without causing a refresh of the App component on every URL change */
   const updateBubbleMode = (value) => {
     document.getElementById("bubbles").classList.remove("services", "contact");
     document.getElementById("bubbles").classList.add(value);
   };
+
+  const initialBubbleMode = window.location.pathname;
+
+  const setFirstBubbleMode = () => {
+    if(initialBubbleMode && initialBubbleMode=="/"){
+      updateBubbleMode("home");
+    };
+    if(initialBubbleMode && initialBubbleMode=="/services"){
+      updateBubbleMode("services");
+    };
+    if(initialBubbleMode && initialBubbleMode=="/contact"){
+      updateBubbleMode("contact");
+    }
+  }
+
+  useEffect(() => {
+    setFirstBubbleMode();
+  }, []);
+
+  
 
   /**arbitrary values corresponding to the %age of Y axis offset of each set of bubbles */
   /*const bubbles = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99];*/
@@ -37,8 +57,6 @@ function App() {
     )
   })
   /**********************************************************************************************/
-
-  const logo = _logo;
 
   let navOpen = false;
   const toggleNav = () => {
