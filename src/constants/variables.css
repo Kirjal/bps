@@ -9,22 +9,26 @@
     --bubble-color: #bdf8;
 
     /*menu elements*/
+    --burger-background: #f5f5f5;
     --burger-button: #1f396c;
     --burger-text: #1f396c;
     --menu-background: #1f396c;
     --menu-text: #f5f5f5;
     --menu-button-hover: #485a80;
+    --menu-bar-height: 4px;
+    --menu-bar-width: 26px;
 
     /*titles*/
     --title-text: #485a80;
     --title-background: #f5f5f5;
     --title-outline: #b3d3f8;
-    --title-gradient: linear-gradient(0.45turn, #b3d3f888 0%, #f5f5f500 50%);
+    --title-gradient: linear-gradient(0.47turn, #b3d3f8 0%, #f5f5f500 40%);
 
     /*content*/
     --base-text: #1f396c;
     --content-background: #f5f5f588;
     --footer-text: #f5f5f5;
+    --logo-background: #f5f5f5;
 
     /*buttons*/
     --button-base-outline: #ffad05;
@@ -35,6 +39,20 @@
     --button-arrow-outline-base: #ffad05;
     --button-arrow-outline-hover: #b3d3f8;
     --button-emphasis-background: #f5f5f5;
+
+    /*navigation*/
+    --menu-link-text: #485a80;
+    --menu-link-background: #f5f5f5;
+    --menu-link-hover-text: #f5f5f5;
+    --menu-link-hover-background: #1f396c;
+    --hidden-menu-link-text: #f5f5f5;
+    --hidden-menu-link-background: #2f497c;
+    --hidden-menu-link-hover-text: #485a80;
+    --hidden-menu-link-hover-background: #f5f5f5;
+    --footer-link-text: #f5f5f5;
+    --footer-link-background : #2f497c;
+    --footer-link-hover-text: #485a80;
+    --footer-link-hover-background: #f5f5f5;
 
     /*form inputs*/
     --input-background: #f5f5f5;

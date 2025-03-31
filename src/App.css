@@ -8,6 +8,9 @@
 *, *::before, *::after{
   box-sizing: border-box;
 }
+a{
+  text-decoration: none;
+}
 *{
   margin: 0;
 }
@@ -54,11 +57,18 @@ header, main, footer{
   position: relative;
 }
 
+main{
+  min-height: 400px;
+}
+
 .title-container{
   position: relative;
   overflow: hidden;
   width: 100vw;
   max-width: 600px;
+}
+.title-container.services-title, .title-container.contact-title{
+  padding-top: 1em;
 }
 
 .title{
@@ -103,8 +113,8 @@ h1, h2{
 
 .content{
   position: relative;
-  padding: 20px;
-  margin: 0 10px;
+  padding: 10px;
+  margin: -40px 10px 30px;
   background-color: var(--content-background);
   border-radius: 15px;
 }
@@ -120,6 +130,16 @@ main p{
   color: var(--base-text);
 }
 
+#contact-button{
+  display: none;
+  height: 100px;
+  width: 100px;
+  background-color: #f00;
+}
+
+#contact-button.visible{
+  display: block;
+}
 
 
 

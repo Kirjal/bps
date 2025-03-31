@@ -3,7 +3,16 @@
 /*elements structure**********************************/
 form{  
     display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.input-container{
+    display: flex;
     flex-direction: column;
+    width: 95%;
+    max-width: 800px;
+    margin-right: 5vw;
 }
 
 .form-content h2{
@@ -53,7 +62,7 @@ form{
     font-style: italic;
 }
 
-/*:not to exclude the radio buttons' label, as they are styled differently*/
+/*:not excludes the radio buttons' label, as they are styled differently*/
 label:not(.small-label){
     color: var(--title-text);
     font-weight: bold;
@@ -94,6 +103,7 @@ label span:not(.business-check-title span){
     flex-direction: column;
     /*padding is given here as the above label has been brought down in .business-check-title label*/
     padding-top: 5px;
+    flex: 1;
 }
 
 
@@ -146,12 +156,11 @@ label span:not(.business-check-title span){
     /*checked outline*/
     box-shadow: inset 0 0 0 3px var(--checkbox-outline-checked);
 }
-
-/*scale 1 to show it above the base checkbox*/
 .form-checkbox:checked::before{
     opacity: 1;
 }
 
+/*precise position and size for the current checkmark which is currently a simple .png*/
 .checkmark{
     height: 15px;
     width: 15px;
@@ -191,10 +200,15 @@ label span:not(.business-check-title span){
     border-color: var(--input-invalid);
 }
 
+.textarea{
+    width: 90%;
+    max-width: 90%;
+}
+
 .button-container{
-    align-self: flex-end;
     position: relative;
     width: 160px;
+    margin-left: auto;
 }
 
 .button-container button{

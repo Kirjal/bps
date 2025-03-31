@@ -3,7 +3,7 @@ import './App.css';
 import { Link } from 'react-router-dom';
 import Routes from "./routes/Routes";
 import { URL_CONTACT, URL_HOME, URL_SERVICES } from './constants/url';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 
 function App() {
@@ -12,8 +12,15 @@ function App() {
 
   /**adds or remove a specific class to the container of the background bubbles to calculate Y axis offset (to give the illusion of a water current) */
   const updateBubbleMode = (value) => {
-    document.getElementById("bubbles").classList.remove("services", "contact");
-    document.getElementById("bubbles").classList.add(value);
+    const bubbleContainer = document.getElementById("bubbles");
+    const contactButton = document.getElementById("contact-button");
+    bubbleContainer.classList.remove("services", "contact");
+    bubbleContainer.classList.add(value);
+    if(value === "contact" && contactButton.classList.contains("visible")){
+      contactButton.classList.remove("visible");
+    } else if(value !== "contact" && !contactButton.classList.contains("visible")){
+      contactButton.classList.add("visible");
+    }
   };
 
   const initialBubbleMode = window.location.pathname;
@@ -30,8 +37,37 @@ function App() {
     }
   }
 
+  const AppRef = useRef(null);
+
   useEffect(() => {
     setFirstBubbleMode();
+
+    const handleScroll = () => {
+      const scrollPosition = AppRef.current.scrollTop;
+      const heightThreshold = 80;
+      const burger = document.getElementById("burger");
+      const nav = document.getElementById("nav-menu");
+
+      if(scrollPosition > heightThreshold && !burger.classList.contains("visible")){
+        burger.classList.add("visible")
+      }
+      if(scrollPosition > heightThreshold && !nav.classList.contains("hidden-menu")){
+        nav.classList.add("hidden-menu");
+      }
+      if(scrollPosition === 0){
+        burger.classList.remove("visible");
+        nav.classList.remove("hidden-menu");
+      }
+    }
+
+    if(AppRef.current){
+      AppRef.current.addEventListener('scroll', handleScroll)
+    }
+    return () => {
+      if(AppRef.current){
+        AppRef.current.removeEventListener('scroll', handleScroll);
+      }
+    }
   });
 
   
@@ -60,19 +96,28 @@ function App() {
 
   let navOpen = false;
   const toggleNav = () => {
-    const nav = document.getElementById("nav")
+    const nav = document.getElementById("nav-menu");
+    const burger = document.getElementById("burger");
     if(navOpen){
       navOpen = false;
       nav.classList.remove("nav-open")
+      burger.classList.remove("burger-open")
     }
     else{
-      navOpen = true;
-      nav.classList.add("nav-open")
+      if(!nav.classList.contains("nav-open")){
+        navOpen = true;
+        nav.classList.add("nav-open");
+      }
+      if(!burger.classList.contains("burger-open")){
+        burger.classList.add("burger-open")
+      }
     }
   }
-  
+
+
+
   return (
-    <div className="App">
+    <div className="App" id="App" ref={AppRef} /*onScroll={handleScroll}*/>
       <div className={"bubble-container"} id="bubbles">
         <div className="bg-gradients"></div>
         <div className="front">
@@ -88,36 +133,35 @@ function App() {
       <header>
         <div className="light-blue-bar"></div>
         <img src={logo} className="header-logo" alt="logo de l'entreprise" />
-        <button style={{height: 20 + "px", width: 20 + "px", backgroundColor: "#ff0", padding: 0}} onClick={toggleNav}></button>
-        <nav id="nav">
-          <button><Link to={URL_HOME} onClick={()=>updateBubbleMode("home")}>accueil</Link></button>
-          <button><Link to={URL_SERVICES} onClick={()=>updateBubbleMode("services")}>services</Link></button>
-          <button><Link to={URL_CONTACT} onClick={()=>updateBubbleMode("contact")}>contact</Link></button>
+        <div id="burger" onClick={toggleNav}>
+          <div className="menu-bar"></div>
+          <div className="menu-bar"></div>
+          <div className="menu-bar"></div>
+        </div>
+        <nav id="nav-menu">
+          <Link to={URL_HOME} onClick={()=>updateBubbleMode("home")} className="nav-button">Accueil</Link>
+          <Link to={{pathname: URL_SERVICES, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Services</Link>
+          <Link to={URL_CONTACT} onClick={()=>updateBubbleMode("contact")} className="nav-button">Contact</Link>
         </nav>
         <div className="yellow-bar"></div>
       </header>
-      <main>
+      <main style={{height: 2000 + "px"}}>
         <div className="main-bg-gradient"></div>
-        <div className="title-container">
-          <div className="title">
-            <h1>Services de plomberie dans la métropole lilloise</h1>
-          </div>
-          <div className="title-gradient"></div>
-        </div>
-        <div className="content">
-          <h3>Lorem ipsum dolor</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, voluptas necessitatibus? Eum ducimus fugiat sit unde voluptatem labore odit, minus numquam deleniti laboriosam at quas quod, quidem esse, quasi vero.</p>
-        </div>
         <Routes />
+        <div id="contact-button">
+
+        </div>
       </main>
       <footer>
         <div className="yellow-bar"></div>
         <div className="footer-content">
-          <img src={logo} className="footer-logo" alt="logo de l'entreprise"/>
+          <div className="footer-logo-container">
+            <img src={logo} className="footer-logo" alt="logo de l'entreprise"/>
+          </div>
           <div className="footer-buttons">
-            <button><Link to={URL_HOME} onClick={()=>updateBubbleMode("home")}>accueil</Link></button>
-            <button><Link to={URL_SERVICES} onClick={()=>updateBubbleMode("services")}>services</Link></button>
-            <button><Link to={URL_CONTACT} onClick={()=>updateBubbleMode("contact")}>contact</Link></button>
+            <Link to={URL_HOME} onClick={()=>updateBubbleMode("home")} className="nav-button">Accueil</Link>
+            <Link to={{pathname: URL_SERVICES, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Services</Link>
+            <Link to={URL_CONTACT} onClick={()=>updateBubbleMode("contact")} className="nav-button">Contact</Link>
           </div>
           <div className="legal">
             <p>

@@ -1,24 +1,33 @@
 @import url(../../../constants/variables.css);
 
 footer{
-    height: 500px;
     width: 100vw;
     background-color: var(--footer-background);
     color: var(--footer-text);
 }
 
 .footer-content{
-    padding: 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    padding-top: 30px;
     height: 100%;
     width: 100%;
 }
 
+.footer-logo-container{
+    background-color: var(--logo-background);
+    border-radius: 0 20px 20px 0;
+    padding: 10px;
+}
+
 .footer-logo{
-    height:83px;
-    width:162px;
+    min-height:83px;
+    min-width:162px;
+    width: 40vw;
+    height: 20.48vw;
+    max-width: 300px;
+    max-height: 154px;
 }
 
 footer .yellow-bar{
@@ -33,8 +42,38 @@ footer .yellow-bar{
 .footer-buttons{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    flex: 1;
+    align-items: center;
+    padding-top: 15px;
+    min-height: 83px;
+    height: 20.48vw;
+    max-height: 154px;
 }
 
-.footer-buttons button{
-    width: 100px;
+.footer-buttons .nav-button{
+    min-width: 100px;
+    width: 80%;
+    max-width: 200px;
+    text-align: center;
+    margin: 0;
+    padding: 3px 15px 0;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-bottom: 3px;
+    align-content: center;
+    transition: all 0.2s;
+    background-color: var(--footer-link-background);
+    color: var(--footer-link-text);
+}
+
+.footer-buttons .nav-button:hover{
+    color: var(--footer-link-hover-text);
+    background-color: var(--footer-link-hover-background);
+}
+
+.legal{
+    padding: 30px;
 }
