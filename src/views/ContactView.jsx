@@ -17,12 +17,11 @@ const ContactView = () => {
         <>
             <div className="title-container contact-title">
                 <div className="title">
-                    <h1>Contact</h1>
+                    <h1>Formulaire de contact</h1>
                 </div>
                 <div className="title-gradient"></div>
             </div>
             <div className="content form-content">
-                <h2>Formulaire de contact</h2>
                 <p className="notice">Les champs marqués d'un astérique (*) sont obligatoires.</p>
                 <Formik
                     initialValues={{

@@ -57,8 +57,16 @@ header, main, footer{
   position: relative;
 }
 
+header{
+  z-index: 2;
+}
+
+footer{
+  z-index: 1;
+}
+
 main{
-  min-height: 400px;
+  min-height: 100vh;
 }
 
 .title-container{
@@ -143,8 +151,24 @@ main p{
 
 
 
+/* transition on <main> when changing pages */
 
+main{
+  opacity: 1;
+  left: 0;
+}
 
+main.hidden{
+  opacity: 0;
+}
+
+main.transition{
+  transition: all 0.6s;
+}
+
+main.left{
+  left: -200px;
+}
 
 
 /** stuff that was there by default from react ***********************************************/

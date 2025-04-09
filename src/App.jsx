@@ -9,11 +9,15 @@ import { useEffect, useRef } from 'react';
 function App() {
 
   /**bubble logic **************************************************************************/
+  const initialBubbleMode = window.location.pathname;
 
   /**adds or remove a specific class to the container of the background bubbles to calculate Y axis offset (to give the illusion of a water current) */
   const updateBubbleMode = (value) => {
     const bubbleContainer = document.getElementById("bubbles");
     const contactButton = document.getElementById("contact-button");
+    const nav_menu = document.getElementById("nav-menu");
+    const main = document.getElementById("main");
+
     bubbleContainer.classList.remove("services", "contact");
     bubbleContainer.classList.add(value);
     if(value === "contact" && contactButton.classList.contains("visible")){
@@ -21,9 +25,21 @@ function App() {
     } else if(value !== "contact" && !contactButton.classList.contains("visible")){
       contactButton.classList.add("visible");
     }
+
+    nav_menu.classList.contains("nav-open") && toggleNav();
+
+    main.classList.add("hidden", "left");
+    setTimeout(()=>{
+      main.classList.add("transition");
+    }, 100);
+    setTimeout(()=>{
+      main.classList.remove("hidden", "left");
+    }, 101)
+    setTimeout(()=>{
+      main.classList.remove("transition");
+    }, 600);
   };
 
-  const initialBubbleMode = window.location.pathname;
 
   const setFirstBubbleMode = () => {
     if(initialBubbleMode && initialBubbleMode === "/"){
@@ -44,7 +60,14 @@ function App() {
 
     const handleScroll = () => {
       const scrollPosition = AppRef.current.scrollTop;
-      const heightThreshold = 80;
+      const header = document.getElementById("header");
+      if(scrollPosition > 0 && !header.classList.contains("small")){
+        header.classList.add("small");
+      }
+      if(scrollPosition === 0 && header.classList.contains("small")){
+        header.classList.remove("small");
+      }
+      /*const heightThreshold = 80;
       const burger = document.getElementById("burger");
       const nav = document.getElementById("nav-menu");
 
@@ -57,7 +80,7 @@ function App() {
       if(scrollPosition === 0){
         burger.classList.remove("visible");
         nav.classList.remove("hidden-menu");
-      }
+      }*/
     }
 
     if(AppRef.current){
@@ -117,7 +140,7 @@ function App() {
 
 
   return (
-    <div className="App" id="App" ref={AppRef} /*onScroll={handleScroll}*/>
+    <div className="App" id="App" ref={AppRef}>
       <div className={"bubble-container"} id="bubbles">
         <div className="bg-gradients"></div>
         <div className="front">
@@ -130,13 +153,16 @@ function App() {
           {generateBubblesBack}
         </div>
       </div>
-      <header>
+      <header id="header">
         <div className="light-blue-bar"></div>
-        <img src={logo} className="header-logo" alt="logo de l'entreprise" />
+          <div className="header-logo-container">
+            <img src={logo} className="header-logo" alt="logo de l'entreprise"/>
+          </div>
         <div id="burger" onClick={toggleNav}>
           <div className="menu-bar"></div>
           <div className="menu-bar"></div>
           <div className="menu-bar"></div>
+          <p>Menu</p>
         </div>
         <nav id="nav-menu">
           <Link to={URL_HOME} onClick={()=>updateBubbleMode("home")} className="nav-button">Accueil</Link>
@@ -145,7 +171,7 @@ function App() {
         </nav>
         <div className="yellow-bar"></div>
       </header>
-      <main style={{height: 2000 + "px"}}>
+      <main id="main" className="hidden">
         <div className="main-bg-gradient"></div>
         <Routes />
         <div id="contact-button">

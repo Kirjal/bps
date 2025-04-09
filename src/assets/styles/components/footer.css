@@ -16,9 +16,10 @@ footer{
 }
 
 .footer-logo-container{
-    background-color: var(--logo-background);
-    border-radius: 0 20px 20px 0;
     padding: 10px;
+    background-color: var(--logo-background);
+    box-shadow: inset 0px 0px 10px 5px var(--background);
+    border-radius: 0 20px 20px 0;
 }
 
 .footer-logo{
@@ -67,6 +68,7 @@ footer .yellow-bar{
     transition: all 0.2s;
     background-color: var(--footer-link-background);
     color: var(--footer-link-text);
+    cursor: pointer;
 }
 
 .footer-buttons .nav-button:hover{

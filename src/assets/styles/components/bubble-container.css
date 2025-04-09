@@ -26,7 +26,7 @@
 /*this one is actually located in <main> but relates to bubbles display as it needs to not show bubbles directly under the title*/
 .main-bg-gradient{
     height: 100%;
-    width: 300px;
+    width: 100vw;
     position: absolute;
     top: 0;
     left: calc(50vw - 150px);

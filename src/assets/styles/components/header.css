@@ -2,11 +2,12 @@
 
 header{
     background-color: var(--background);
-    height: 110px;
+    min-height: 110px;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: all 0.3s;
 }
 
 header .light-blue-bar{
@@ -27,29 +28,54 @@ header .yellow-bar{
     right: 0;
 }
 
-.header-logo{
-    height:83px;
-    width:162px;
-    margin-left: 15px;
+.header-logo-container{
+    padding: 10px;
+    background-color: var(--logo-background);
+    box-shadow: inset 0px 0px 10px 5px var(--background);
+    transition: all 0.3s;
 }
+
+.header-logo{
+    min-height:83px;
+    min-width:162px;
+    width: 40vw;
+    height: 20.48vw;
+    max-width: 243px;
+    max-height: 125px;
+    transition: all 0.3s;
+}
+
+/* commented parts were used when the burger menu had to only show up on mobile */
 
 #burger{
+    display: flex;
+    justify-content: right;
     height: 50px;
-    width: 50px;
+    width: 100px;
     background-color: var(--burger-background);
-    border-radius: 15px;
+    border-radius: 15px 0 0 15px;
     position: fixed;
-    top: -40px;
-    right: 30px;
+    /*top: -40px;*/
+    top: 30px;
+    right: 0px;
     transition: all 0.5s;
-    opacity: 0;
+    /*opacity: 0;*/
+    opacity: 1;
     z-index: 100;
+    cursor: pointer;
 }
 
-#burger.visible{
+#burger p{
+    width: 60px;
+    padding-right: 10px;
+    text-align: center;
+    align-self: center;
+}
+
+/* #burger.visible{
     top: 30px;
     opacity: 1;
-}
+} */
 
 .menu-bar{
     height: var(--menu-bar-height);
@@ -60,7 +86,7 @@ header .yellow-bar{
     background-color: var(--burger-button);
     transition: all 0.3s;
     position: absolute;
-    left: calc(50% - var(--x-offset));
+    left: calc(25% - var(--x-offset));
 }
 
 .menu-bar:first-child{
@@ -71,7 +97,7 @@ header .yellow-bar{
     top: calc(50% - var(--y-offset));
 }
 
-.menu-bar:last-child{
+.menu-bar:nth-child(3){
     top: calc(70% - var(--y-offset));
 }
 
@@ -85,7 +111,7 @@ header .yellow-bar{
     width: var(--x-offset);
 }
 
-#burger.burger-open .menu-bar:last-child{
+#burger.burger-open .menu-bar:nth-child(3){
     top: calc(50% - var(--y-offset));
     rotate: -0.375turn;
 }
@@ -93,9 +119,10 @@ header .yellow-bar{
 nav{
     flex: 1;
     margin-left: 20px;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -111,9 +138,9 @@ nav .nav-button{
     border-radius: 30px;
     margin-bottom: 3px;
     align-content: center;
-    transition: all 0.2s;
     color: var(--menu-link-text);
     background-color: var(--menu-link-background);
+    cursor: pointer;
 }
 
 nav .nav-button:hover{
@@ -121,13 +148,9 @@ nav .nav-button:hover{
     background-color: var(--menu-link-hover-background)
 }
 
-nav.nav-open{
-    background-color:#f00;
-}
-
 
 @media screen and (max-width: 768px){
-    nav.hidden-menu{
+    nav/*.hidden-menu*/{
         transition: all 0.3s;
         position: fixed;
         top: 0;
@@ -141,28 +164,46 @@ nav.nav-open{
         padding: 120px 20px 20px;
     }
     
-    nav.hidden-menu.nav-open{
+    nav/*.hidden-menu*/.nav-open{
         right: 0;
     }
     
-    nav.hidden-menu .nav-button{
+    nav/*.hidden-menu*/ .nav-button{
         background-color: var(--hidden-menu-link-background);
         color: var(--hidden-menu-link-text);
         height: 40px;
+        transition: all 0.2s;
     }
     
-    nav.hidden-menu .nav-button:hover{
+    nav/*.hidden-menu*/ .nav-button:hover{
         background-color: var(--hidden-menu-link-hover-background);
         color: var(--hidden-menu-link-hover-text);
     }
 }
 
 @media screen and (min-width: 769px){
+    header.small{
+        position: sticky;
+        top: 0;
+        height: 100px; 
+    }
+    
+    header.small .header-logo{
+        min-height: 63px;
+        min-width: 122px;
+        max-height: 63px;
+        max-width: 122px;
+    }
+
     nav{
         flex-direction: row;
     }
 
     #burger{
         display: none;
+    }
+
+    .nav-button{
+        transition: all 0.2s;
     }
 }
