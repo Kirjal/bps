@@ -17,6 +17,8 @@ const ContactView = () => {
         <>
             <div className="title-container contact-title">
                 <div className="title">
+                    <div className="title-fade"></div>
+                    <div className="title-outline"></div>
                     <h1>Formulaire de contact</h1>
                 </div>
                 <div className="title-gradient"></div>
@@ -48,8 +50,36 @@ const ContactView = () => {
                 >
                     {({ values, setFieldValue, errors, touched, handleSubmit }) => (
                         <Form action="">
+                            <div className="input-container business-check-container">
+
+                                <div className="business-check-title">
+                                    
+                                    <label>
+                                        <Field type="checkbox" name="business" id="business" className="form-checkbox" onChange={()=>{
+                                            setFieldValue("business", !values.business);
+                                            setOptionsVisibility(!optionsVisibility);
+                                        }}/>
+                                        <img src={tick} alt="" className="checkmark" />
+                                        <span>Êtes-vous une entreprise?</span>
+                                    </label>
+                                </div>
+
+
+                                <div className={`business-options-container ${optionsVisibility? "" : " hidden"}`} id="business-options-container">
+                                    <div className={`business-bar ${optionsVisibility? "" : " hidden"}`}></div>
+                                    <div className="business-options">
+
+                                        <label htmlFor="businessName">Nom de l'entreprise</label>
+                                        <Field type="text" name="businessName" id="businessName" placeholder="Nom de l'entreprise" className="form-input" />
+
+                                        <label htmlFor="siret">n° SIRET</label>
+                                        <Field type="text" name="siret" id="siret" placeholder="n° SIRET" className="form-input" />
+
+                                    </div>
+                                </div>
+                            </div>
                             <div className="input-container">
-                                <label htmlFor="name">Nom complet *</label>
+                                <label htmlFor="name">Personne à contacter *</label>
                                 <Field type="text" name="name" id="name" placeholder="Nom Prénom"
                                     className={`form-input  ${errors.name && touched.name ? " invalid-input" : ""}`}
                                 />
@@ -113,34 +143,6 @@ const ContactView = () => {
                             </div>
                             
 
-                            <div className="input-container business-check-container">
-
-                                <div className="business-check-title">
-                                    
-                                    <label>
-                                        <Field type="checkbox" name="business" id="business" className="form-checkbox" onChange={()=>{
-                                            setFieldValue("business", !values.business);
-                                            setOptionsVisibility(!optionsVisibility);
-                                        }}/>
-                                        <img src={tick} alt="" className="checkmark" />
-                                        <span>Êtes-vous une entreprise?</span>
-                                    </label>
-                                </div>
-
-
-                                <div className={`business-options-container ${optionsVisibility? "" : " hidden"}`} id="business-options-container">
-                                    <div className={`business-bar ${optionsVisibility? "" : " hidden"}`}></div>
-                                    <div className="business-options">
-
-                                        <label htmlFor="businessName">Nom de l'entreprise</label>
-                                        <Field type="text" name="businessName" id="businessName" placeholder="Nom de l'entreprise" className="form-input" />
-
-                                        <label htmlFor="siret">n° SIRET</label>
-                                        <Field type="text" name="siret" id="siret" placeholder="n° SIRET" className="form-input" />
-
-                                    </div>
-                                </div>
-                            </div>
 
                             <div className="input-container textarea">
                                 <label htmlFor="info">Informations sur vos besoins</label>

@@ -5,6 +5,8 @@ const ServicesView = (props) => {
         <>
             <div className="title-container services-title">
                 <div className="title">
+                    <div className="title-fade"></div>
+                    <div className="title-outline"></div>
                     <h1>Liste complète des services</h1>
                 </div>
                 <div className="title-gradient"></div>

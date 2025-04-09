@@ -67,13 +67,17 @@ footer{
 
 main{
   min-height: 100vh;
+  min-width: 320px;
+  max-width: 1500px;
+  margin: auto;
+  padding-top: 170px;
 }
 
 .title-container{
-  position: relative;
+  position: absolute;
+  top: 20px;
   overflow: hidden;
-  width: 100vw;
-  max-width: 600px;
+  width: calc(50vw + 160px);
 }
 .title-container.services-title, .title-container.contact-title{
   padding-top: 1em;
@@ -82,15 +86,13 @@ main{
 .title{
   background-color: var(--title-background);
   border-radius: 0 200px 200px 0;
-  box-shadow: 3px 5px var(--title-outline);
   position: relative;
   left: -4px;
 }
 
 .title-gradient{
   height: 80px;
-  width: 100%;
-  max-width: 320px;
+  width: min(320px, 80%);
   background: var(--title-gradient);
 }
 
@@ -102,7 +104,7 @@ h1, h2{
   font-size: 1.2em;
   font-weight: bold;
   width: 320px;
-  padding: 20px 20px 8px 4px;
+  padding: 16px 20px 16px 4px;
 }
 
 .yellow-line{
@@ -122,7 +124,7 @@ h1, h2{
 .content{
   position: relative;
   padding: 10px;
-  margin: -40px 10px 30px;
+  margin: 0 10px 30px;
   background-color: var(--content-background);
   border-radius: 15px;
 }
@@ -143,6 +145,9 @@ main p{
   height: 100px;
   width: 100px;
   background-color: #f00;
+  position: sticky;
+  margin: 0 20px 0 auto;
+  bottom: 20px;
 }
 
 #contact-button.visible{
@@ -170,6 +175,43 @@ main.left{
   left: -200px;
 }
 
+.title-fade{
+  display: none;
+}
+
+.title-outline{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 0 200px 200px 0;
+  box-shadow: inset -3px -5px var(--title-outline);
+}
+
+@media screen and (min-width: 769px){
+  main{
+    width: 95%;
+  }
+
+  .title-fade{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: calc(100% - 320px);
+    background: linear-gradient(0.25turn, #f5f5f5, #f5f5f500);
+    z-index: 1;
+  }
+
+  .title-gradient{
+    width:max(320px, 90%);
+    height: 40px;
+    margin: 0 50px 0 auto;
+    background: var(--title-gradient-large);
+  }
+}
 
 /** stuff that was there by default from react ***********************************************/
 
