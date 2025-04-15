@@ -73,6 +73,14 @@ main{
   padding-top: 170px;
 }
 
+li{
+  list-style: none;
+}
+
+ul{
+  padding: 0;
+}
+
 .title-container{
   position: absolute;
   top: 20px;

@@ -42,13 +42,20 @@ function App() {
 
 
   const setFirstBubbleMode = () => {
-    if(initialBubbleMode && initialBubbleMode === "/"){
+    if(initialBubbleMode && initialBubbleMode === URL.URL_HOME){
       updateBubbleMode("home");
     };
-    if(initialBubbleMode && initialBubbleMode === "/services"){
+    if(initialBubbleMode &&
+      (initialBubbleMode === URL.URL_PLOMBERIE
+        || initialBubbleMode === URL.URL_CHAUFFAGE
+        || initialBubbleMode === URL.URL_CLIMATISATION
+        || initialBubbleMode === URL.URL_RENOVATION
+        || initialBubbleMode === URL.URL_AIDES
+      )
+    ){
       updateBubbleMode("services");
     };
-    if(initialBubbleMode && initialBubbleMode === "/contact"){
+    if(initialBubbleMode && initialBubbleMode === URL.URL_CONTACT){
       updateBubbleMode("contact");
     }
   }
@@ -121,17 +128,17 @@ function App() {
 
   let navOpen = false;
   const toggleNav = () => {
-    const nav = document.getElementById("nav-menu");
+    const header = document.getElementById("header");
     const burger = document.getElementById("burger");
     if(navOpen){
       navOpen = false;
-      nav.classList.remove("nav-open")
+      header.classList.remove("nav-open")
       burger.classList.remove("burger-open")
     }
     else{
-      if(!nav.classList.contains("nav-open")){
+      if(!header.classList.contains("nav-open")){
         navOpen = true;
-        nav.classList.add("nav-open");
+        header.classList.add("nav-open");
       }
       if(!burger.classList.contains("burger-open")){
         burger.classList.add("burger-open")
@@ -166,14 +173,35 @@ function App() {
           <div className="menu-bar"></div>
           <p>Menu</p>
         </div>
+        <ul className="nav-contact-info">
+          <li><span>Ghislaine :</span> 06 33 97 97 49</li>
+          <li><span>Olivier :</span> 07 82 17 93 36</li>
+          <li><span>Mail :</span> ghislaine.bpsplomberie@gmail.com</li>
+        </ul>
         <nav id="nav-menu">
-          <Link to={URL.URL_HOME} onClick={()=>updateBubbleMode("home")} className="nav-button">Accueil</Link>
-          <Link to={{pathname: URL.URL_PLOMBERIE, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Plomberie</Link>
-          <Link to={{pathname: URL.URL_CHAUFFAGE, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Chauffage</Link>
-          <Link to={{pathname: URL.URL_CLIMATISATION, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Climatisation & VMC</Link>
-          <Link to={{pathname: URL.URL_RENOVATION, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Rénovation</Link>
-          <Link to={{pathname: URL.ULR_AIDES, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Aides gouvernemenales</Link>
-          <Link to={URL.URL_CONTACT} onClick={()=>updateBubbleMode("contact")} className="nav-button">Contact</Link>
+          <ul>
+            <li>
+              <Link to={URL.URL_HOME} onClick={()=>updateBubbleMode("home")} className="nav-button">Accueil</Link>
+            </li>
+            <li>
+              <Link to={{pathname: URL.URL_PLOMBERIE, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Plomberie</Link>
+            </li>
+            <li>
+              <Link to={{pathname: URL.URL_CHAUFFAGE, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Chauffage</Link>
+            </li>
+            <li>
+              <Link to={{pathname: URL.URL_CLIMATISATION, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Climatisation & VMC</Link>
+            </li>
+            <li>
+              <Link to={{pathname: URL.URL_RENOVATION, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Rénovation</Link>
+            </li>
+            <li>
+              <Link to={{pathname: URL.URL_AIDES, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Aides gouvernemenales</Link>
+            </li>
+            {/* <li>
+              <Link to={URL.URL_CONTACT} onClick={()=>updateBubbleMode("contact")} className="nav-button">Contact</Link>
+            </li> */}
+          </ul>
         </nav>
         <div className="yellow-bar"></div>
       </header>

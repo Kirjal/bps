@@ -2,11 +2,10 @@
 
 header{
     background-color: var(--background);
-    height: 145px;
     width: 100vw;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
     transition: all 0.3s;
 }
 
@@ -24,8 +23,9 @@ header .yellow-bar{
     height: 5px;
     width: 65%;
     position: absolute;
-    bottom: 0;
+    top: 140px;
     right: 0;
+    transition: all 0.3s;
 }
 
 .header-logo-container{
@@ -115,21 +115,31 @@ header .yellow-bar{
 }
 
 nav{
-    flex: 1;
-    margin-left: 20px;
+    padding: 3px 5px 0;
     max-width: 1200px;
     height: 100%;
+}
+
+nav ul{
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
 }
 
+nav ul li{
+    width: 230px;
+    height: 32px;
+}
+
 nav .nav-button{
-    width: 260px;
+    display: block;
+    width: 100%;
+    height: 100%;
     text-align: center;
     padding: 1px 15px 0;
-    height: 34px;
     font-weight: bold;
     border-radius: 30px;
     align-content: center;
@@ -143,10 +153,30 @@ nav .nav-button:hover{
     background-color: var(--menu-link-hover-background)
 }
 
+.nav-contact-info{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    padding: 5px 10px;
+    width: 320px;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 145px;
+}
+
+.nav-contact-info span{
+    font-weight: bold;
+}
 
 @media screen and (max-width: 768px){
     header{
         height: 110px;
+    }
+
+    header .yellow-bar{
+        top: 108px;
     }
     
     .header-logo-container{
@@ -154,7 +184,7 @@ nav .nav-button:hover{
         width: 182px;
     }
 
-    nav/*.hidden-menu*/{
+    nav{
         transition: all 0.3s;
         position: fixed;
         top: 0;
@@ -163,23 +193,47 @@ nav .nav-button:hover{
         height: 100vh;
         width: 100vw;
         background-color: var(--menu-background);
-        justify-content: flex-start;
+        padding: 20px;
+    }
+
+    nav ul{
+        flex-flow: column nowrap;
+        justify-content: flex-end;
         gap: 10px;
-        padding: 100px 20px 20px;
     }
     
-    nav/*.hidden-menu*/.nav-open{
+    .nav-open nav{
+        right: 0;
+    }
+
+    .nav-contact-info{
+        width: 100vw;
+        top: 100px;
+        right: -100%;
+        color: var(--light-text);
+        z-index: 100;
+    }
+
+    .nav-contact-info li{
+        width: 300px;
+        align-self: center;
+    }
+
+    .nav-open .nav-contact-info{
         right: 0;
     }
     
+    nav ul li{
+        height: 35px;
+        width: 260px;
+    }
+
     nav/*.hidden-menu*/ .nav-button{
         background-color: var(--hidden-menu-link-background);
         color: var(--hidden-menu-link-text);
         padding: 1px 15px 0;
         margin: 0 5px 3px;
         border-radius: 30px;
-        height: 40px;
-        min-width: 260px;
         transition: all 0.2s;
     }
     
@@ -193,12 +247,20 @@ nav .nav-button:hover{
     header.small{
         position: sticky;
         top: 0;
-        height: 100px; 
     }
     
     header.small .header-logo-container{
         height: 83px;
         width: 142px;
+    }
+
+    header.small .yellow-bar{
+        top:81px;
+    }
+
+    header.small .nav-contact-info{
+        height: 83px;
+        right: calc(50% - 302px);/**/
     }
 
     nav{

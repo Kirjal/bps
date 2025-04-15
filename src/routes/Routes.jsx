@@ -17,7 +17,7 @@ const Routes = () => {
             <Route path={URL.URL_CHAUFFAGE} element={<ChauffageView />} />
             <Route path={URL.URL_CLIMATISATION} element={<ClimatisationView />} />
             <Route path={URL.URL_RENOVATION} element={<RenovationView />} />
-            <Route path={URL.ULR_AIDES} element={<AidesView />} />
+            <Route path={URL.URL_AIDES} element={<AidesView />} />
             <Route path={URL.URL_CONTACT} element={<ContactView />} />
         </RoutesContainer>
     );

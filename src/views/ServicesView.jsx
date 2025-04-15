@@ -1,5 +1,5 @@
 import React from "react"
-
+/**this component should now be useless */
 const ServicesView = (props) => {
     return(
         <>
