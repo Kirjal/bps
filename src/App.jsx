@@ -2,7 +2,7 @@ import logo from './assets/images/bps_logo_temp.png';
 import './App.css';
 import { Link } from 'react-router-dom';
 import Routes from "./routes/Routes";
-import { URL_CONTACT, URL_HOME, URL_SERVICES } from './constants/url';
+import * as URL from './constants/url';
 import { useEffect, useRef } from 'react';
 
 
@@ -95,8 +95,10 @@ function App() {
 
   
 
-  /**arbitrary values corresponding to the %age of Y axis offset of each set of bubbles */
+  /**arbitrary values corresponding to the Y axis offset (in % of height of their respective containers) of each set of bubbles */
   const bubbles = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99];
+
+  /**option for a more compact visual */
   /*const bubbles = [0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94,96,98,100];*/
 
   /**slightly randomised top and left properties for each bubble on page load */
@@ -165,9 +167,13 @@ function App() {
           <p>Menu</p>
         </div>
         <nav id="nav-menu">
-          <Link to={URL_HOME} onClick={()=>updateBubbleMode("home")} className="nav-button">Accueil</Link>
-          <Link to={{pathname: URL_SERVICES, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Services</Link>
-          <Link to={URL_CONTACT} onClick={()=>updateBubbleMode("contact")} className="nav-button">Contact</Link>
+          <Link to={URL.URL_HOME} onClick={()=>updateBubbleMode("home")} className="nav-button">Accueil</Link>
+          <Link to={{pathname: URL.URL_PLOMBERIE, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Plomberie</Link>
+          <Link to={{pathname: URL.URL_CHAUFFAGE, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Chauffage</Link>
+          <Link to={{pathname: URL.URL_CLIMATISATION, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Climatisation & VMC</Link>
+          <Link to={{pathname: URL.URL_RENOVATION, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Rénovation</Link>
+          <Link to={{pathname: URL.ULR_AIDES, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Aides gouvernemenales</Link>
+          <Link to={URL.URL_CONTACT} onClick={()=>updateBubbleMode("contact")} className="nav-button">Contact</Link>
         </nav>
         <div className="yellow-bar"></div>
       </header>
@@ -184,11 +190,12 @@ function App() {
           <div className="footer-logo-container">
             <img src={logo} className="footer-logo" alt="logo de l'entreprise"/>
           </div>
-          <div className="footer-buttons">
+          {/**footer buttons have been disabled since the <nav> will always be visible or accessible anywhere on the website */}
+          {/* <div className="footer-buttons">
             <Link to={URL_HOME} onClick={()=>updateBubbleMode("home")} className="nav-button">Accueil</Link>
             <Link to={{pathname: URL_SERVICES, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Services</Link>
             <Link to={URL_CONTACT} onClick={()=>updateBubbleMode("contact")} className="nav-button">Contact</Link>
-          </div>
+          </div> */}
           <div className="legal">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui autem architecto, sunt sequi labore rerum maxime tenetur dolorem nihil sapiente vitae commodi reiciendis. Eum provident modi et, quaerat nesciunt deleniti.

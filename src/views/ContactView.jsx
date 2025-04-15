@@ -39,12 +39,30 @@ const ContactView = () => {
                         siret: "",
                         info: ""
                     }}
-                    validationSchema={Yup.object({
-                        name: Yup.string().required("Veuillez entrer un nom."),
-                        phone: Yup.mixed().required("Veuillez entrer un n° de téléphone."),
-                        email: Yup.mixed().required("Veuillez entrer une adresse mail."),
-                        town: Yup.mixed().required("Veuillez entrer votre ville."),
-                        zipcode: Yup.mixed().required("Veuillez entrer votre code postal."),
+                    validationSchema={
+                        Yup.object({
+                        name: Yup
+                            .string()
+                            .required("Veuillez entrer un nom."),
+                        phone: Yup
+                            .mixed()
+                            .required("Veuillez entrer un n° de téléphone."),
+                        email: Yup
+                            .string()
+                            .required("Veuillez entrer une adresse mail."),
+                        town: Yup
+                            .string()
+                            .required("Veuillez entrer votre ville."),
+                        zipcode: Yup
+                            .string()
+                            .required("Veuillez entrer votre code postal."),
+                        business: Yup.boolean(),
+                        businessName: Yup
+                            .string()
+                            .when("business", {
+                                is: true,
+                                then: ()=> Yup.string().required("Requis si vous êtes une entreprise.")
+                            })
                     })}
                     onSubmit={handleSubmit}
                 >
@@ -69,8 +87,9 @@ const ContactView = () => {
                                     <div className={`business-bar ${optionsVisibility? "" : " hidden"}`}></div>
                                     <div className="business-options">
 
-                                        <label htmlFor="businessName">Nom de l'entreprise</label>
+                                        <label htmlFor="businessName">Nom de l'entreprise *</label>
                                         <Field type="text" name="businessName" id="businessName" placeholder="Nom de l'entreprise" className="form-input" />
+                                        <span className="error"><ErrorMessage name="businessName" /></span>
 
                                         <label htmlFor="siret">n° SIRET</label>
                                         <Field type="text" name="siret" id="siret" placeholder="n° SIRET" className="form-input" />

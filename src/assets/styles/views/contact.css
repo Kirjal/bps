@@ -92,7 +92,7 @@ label span:not(.business-check-title span){
     display: flex;
     overflow: hidden;
     transition: all 0.4s;
-    height: 135px;
+    height: 155px;
 }
 .business-options-container.hidden{
     height: 0;

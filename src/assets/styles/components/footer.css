@@ -40,7 +40,8 @@ footer .yellow-bar{
     background-color: var(--bps-yellow);
 }
 
-.footer-buttons{
+/*footer navigation buttons have been disabled since the nav will always be accessible anywhere on the website*/
+/*.footer-buttons{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,7 +75,7 @@ footer .yellow-bar{
 .footer-buttons .nav-button:hover{
     color: var(--footer-link-hover-text);
     background-color: var(--footer-link-hover-background);
-}
+}*/
 
 .legal{
     padding: 30px;
