@@ -1,0 +1,139 @@
+/*the whole contact button display is regulated by the defined button height, width, and ellipse height*/
+#contact-button{
+    --button-height: 56px;
+    --button-width: 180px;
+    --ellipse-height: 90px;
+    --ellipse-width: calc(var(--ellipse-height) * 2.5);
+    --gradient-height: calc(var(--ellipse-height) * 1.4);
+    --gradient-width: calc(var(--ellipse-width) * 1.4);
+    --arrow-height: calc(var(--button-height) * 1.6);
+    --arrow-width: calc(var(--button-height) * 1.1);
+    /*arrow positioning tweaks : they are first positioned to the center of the container, then offset by a certain value to accomodate for their desired position*/
+    /*might have to correct the % values on #contact-button .arrow123 if the transition is broken by certain size values*/
+    --arrow-1-top-offset: 5px;
+    --arrow-2-top-offset: 35%;
+    --arrow-3-top-offset: 35%;
+    --arrow-1-left-offset: 30%;
+    --arrow-2-left-offset: 10%;
+    --arrow-3-left-offset: 5%;
+    display: none;
+    height: calc(var(--ellipse-height) * 1.5);
+    width: calc(var(--ellipse-width) * 1.5);
+    position: sticky;
+    margin-left: auto;
+    margin-right: -60px;
+    bottom: 30px;
+    border-radius: 100%;
+  }
+  
+  #contact-button.visible{
+    display: block;
+  }
+  
+  #contact-button .button{
+    height: var(--button-height);
+    width: var(--button-width);
+    font-weight: bold;
+    color: var(--button-text);
+    border-radius: 100px;
+    border: 4px solid var(--button-base-outline);
+    background-color: var(--button-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    position: absolute;
+    top: calc(50% - var(--button-height) / 2);
+    left: calc(50% - var(--button-width) / 2);
+  }
+  
+  #contact-button .ellipse{
+    height: var(--ellipse-height);
+    width: var(--ellipse-width);
+    border-radius: 100%;
+    background-color: var(--button-emphasis-background);
+    position: relative;
+    border: 5px solid var(--button-base-outline);
+    transition: all 0.2s;
+    position: absolute;
+    top: calc(50% - var(--ellipse-height) / 2);
+    left: calc(50% - var(--ellipse-width) / 2);
+    rotate: -10deg;
+  }
+  
+  #contact-button .contact-background-gradient{
+    height: var(--gradient-height);
+    width: var(--gradient-width);
+    background: radial-gradient(closest-side, var(--background) 75%, #f5f5f500);
+    position: absolute;
+    top: calc(50% - var(--gradient-height) / 2);
+    left: calc(50% - var(--gradient-width) / 2);
+    rotate: -10deg;
+  }
+  
+  #contact-button .arrow{
+    position: absolute;
+    transition: all 0.2s;
+    height: var(--arrow-height);
+    width: var(--arrow-width);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+  }
+  
+  #contact-button .yellow-arrow{
+    background-image: url("../../images/yellow_contact_arrow.svg");
+    opacity: 1;
+  }
+  
+  #contact-button .light-blue-arrow{
+    background-image: url("../../images/light_blue_contact_arrow.svg");
+    opacity: 0;
+  }
+  
+  #contact-button .arrow1{
+    top: calc(51% - var(--arrow-height) / 2 + var(--arrow-1-top-offset));
+    left: calc(47% - var(--arrow-width) / 2 - var(--arrow-1-left-offset));
+    rotate: -10deg;
+  }
+  
+  #contact-button .arrow2{
+    top: calc(45% - var(--arrow-height) / 2 - var(--arrow-2-top-offset));
+    left: calc(49% - var(--arrow-width) / 2 - var(--arrow-2-left-offset));
+    rotate: 80deg;
+  }
+  
+  #contact-button .arrow3{
+    top: calc(55% - var(--arrow-height) / 2 + var(--arrow-3-top-offset));
+    left: calc(51% - var(--arrow-width) / 2 + var(--arrow-3-left-offset));
+    rotate: -100deg;
+  }
+  
+  #contact-button:hover .ellipse{
+    border: 5px solid var(--button-hover-outline);
+  }
+  
+  #contact-button:hover .button{
+    border: 4px solid var(--button-hover-outline);
+  }
+  
+  #contact-button:hover .light-blue-arrow{
+    opacity: 1;
+  }
+  
+  #contact-button:hover .arrow1{
+    top: calc(50% - var(--arrow-height) / 2 + var(--arrow-1-top-offset));
+    left: calc(50% - var(--arrow-width) / 2 - var(--arrow-1-left-offset));
+  }
+  
+  #contact-button:hover .arrow2{
+    top: calc(50% - var(--arrow-height) / 2 - var(--arrow-2-top-offset));
+    left: calc(50% - var(--arrow-width) / 2 - var(--arrow-2-left-offset));
+  }
+  
+  #contact-button:hover .arrow3{
+    top: calc(50% - var(--arrow-height) / 2 + var(--arrow-3-top-offset));
+    left: calc(50% - var(--arrow-width) / 2 + var(--arrow-3-left-offset));
+  }

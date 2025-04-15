@@ -15,7 +15,7 @@ function App() {
   const updateBubbleMode = (value) => {
     const bubbleContainer = document.getElementById("bubbles");
     const contactButton = document.getElementById("contact-button");
-    const nav_menu = document.getElementById("nav-menu");
+    const header = document.getElementById("header");
     const main = document.getElementById("main");
 
     bubbleContainer.classList.remove("services", "contact");
@@ -26,7 +26,7 @@ function App() {
       contactButton.classList.add("visible");
     }
 
-    nav_menu.classList.contains("nav-open") && toggleNav();
+    header.classList.contains("nav-open") && toggleNav();
 
     main.classList.add("hidden", "left");
     setTimeout(()=>{
@@ -198,18 +198,29 @@ function App() {
             <li>
               <Link to={{pathname: URL.URL_AIDES, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Aides gouvernemenales</Link>
             </li>
-            {/* <li>
+            <li>
               <Link to={URL.URL_CONTACT} onClick={()=>updateBubbleMode("contact")} className="nav-button">Contact</Link>
-            </li> */}
+            </li>
           </ul>
         </nav>
         <div className="yellow-bar"></div>
+        <div className="header-gradient"></div>
       </header>
       <main id="main" className="hidden">
         <div className="main-bg-gradient"></div>
         <Routes />
         <div id="contact-button">
-
+          <Link to={URL.URL_CONTACT} onClick={()=>updateBubbleMode("contact")}>
+            <div className="contact-background-gradient"></div>
+            <div className="ellipse"></div>
+            <div className="button">Prendre contact</div>
+            <div className="arrow yellow-arrow arrow1"></div>
+            <div className="arrow yellow-arrow arrow2"></div>
+            <div className="arrow yellow-arrow arrow3"></div>
+            <div className="arrow light-blue-arrow arrow1"></div>
+            <div className="arrow light-blue-arrow arrow2"></div>
+            <div className="arrow light-blue-arrow arrow3"></div>
+          </Link>
         </div>
       </main>
       <footer>
