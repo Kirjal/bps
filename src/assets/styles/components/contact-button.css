@@ -11,19 +11,22 @@
     /*arrow positioning tweaks : they are first positioned to the center of the container, then offset by a certain value to accomodate for their desired position*/
     /*might have to correct the % values on #contact-button .arrow123 if the transition is broken by certain size values*/
     --arrow-1-top-offset: 5px;
-    --arrow-2-top-offset: 35%;
-    --arrow-3-top-offset: 35%;
-    --arrow-1-left-offset: 30%;
-    --arrow-2-left-offset: 10%;
+    --arrow-1-left-offset: 55%;
+    --arrow-2-top-offset: 60%;
+    --arrow-2-left-offset: 15%;
+    --arrow-3-top-offset: 60%;
     --arrow-3-left-offset: 5%;
     display: none;
-    height: calc(var(--ellipse-height) * 1.5);
-    width: calc(var(--ellipse-width) * 1.5);
+    height: calc(var(--ellipse-height) * 0.8);
+    width: calc(var(--ellipse-width) * 0.8);
     position: sticky;
-    margin-left: auto;
-    margin-right: -60px;
-    bottom: 30px;
+    margin: 60px 0 0 auto;
+    bottom: 20px;
     border-radius: 100%;
+  }
+
+  .contact-button-buffer{
+    height: 60px;
   }
   
   #contact-button.visible{
@@ -95,18 +98,18 @@
   
   #contact-button .arrow1{
     top: calc(51% - var(--arrow-height) / 2 + var(--arrow-1-top-offset));
-    left: calc(47% - var(--arrow-width) / 2 - var(--arrow-1-left-offset));
+    left: calc(45% - var(--arrow-width) / 2 - var(--arrow-1-left-offset));
     rotate: -10deg;
   }
   
   #contact-button .arrow2{
-    top: calc(45% - var(--arrow-height) / 2 - var(--arrow-2-top-offset));
+    top: calc(43% - var(--arrow-height) / 2 - var(--arrow-2-top-offset));
     left: calc(49% - var(--arrow-width) / 2 - var(--arrow-2-left-offset));
     rotate: 80deg;
   }
   
   #contact-button .arrow3{
-    top: calc(55% - var(--arrow-height) / 2 + var(--arrow-3-top-offset));
+    top: calc(57% - var(--arrow-height) / 2 + var(--arrow-3-top-offset));
     left: calc(51% - var(--arrow-width) / 2 + var(--arrow-3-left-offset));
     rotate: -100deg;
   }
@@ -136,4 +139,15 @@
   #contact-button:hover .arrow3{
     top: calc(50% - var(--arrow-height) / 2 + var(--arrow-3-top-offset));
     left: calc(50% - var(--arrow-width) / 2 + var(--arrow-3-left-offset));
+  }
+
+  @media screen and (min-width: 769px){
+    #contact-button{
+      margin: 60px 30px 0 auto;
+      bottom: 60px;
+    }
+
+    .contact-button-buffer{
+      height: 60px;
+    }
   }

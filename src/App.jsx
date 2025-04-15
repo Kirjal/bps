@@ -65,8 +65,10 @@ function App() {
   useEffect(() => {
     setFirstBubbleMode();
 
+    const appref = AppRef.current;
+
     const handleScroll = () => {
-      const scrollPosition = AppRef.current.scrollTop;
+      const scrollPosition = appref.scrollTop;
       const header = document.getElementById("header");
       if(scrollPosition > 0 && !header.classList.contains("small")){
         header.classList.add("small");
@@ -90,12 +92,12 @@ function App() {
       }*/
     }
 
-    if(AppRef.current){
-      AppRef.current.addEventListener('scroll', handleScroll)
+    if(appref){
+      appref.addEventListener('scroll', handleScroll)
     }
     return () => {
-      if(AppRef.current){
-        AppRef.current.removeEventListener('scroll', handleScroll);
+      if(appref){
+        appref.removeEventListener('scroll', handleScroll);
       }
     }
   });
@@ -222,6 +224,7 @@ function App() {
             <div className="arrow light-blue-arrow arrow3"></div>
           </Link>
         </div>
+        <div className="contact-button-buffer"></div>
       </main>
       <footer>
         <div className="yellow-bar"></div>

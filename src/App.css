@@ -67,7 +67,6 @@ footer{
 }
 
 main{
-  min-height: 100vh;
   min-width: 320px;
   width: 90%;
   max-width: 1200px;
