@@ -250,7 +250,7 @@ function App() {
             <li><span>Dirigeant :</span> Olivier BIGORD</li>
             <li><span>LinkedIn :</span>{/*MISSING*/}</li>
             <li><span>Facebook :</span>{/*MISSING*/}</li>
-            <li>Site conçu par Alexandre Demontier EI : <a href="https://kirjal.fr" target="_blank">https://kirjal.fr</a></li>
+            <li>Site conçu par Alexandre Demontier EI : <a href="https://kirjal.fr" target="_blank" rel="noreferrer">https://kirjal.fr</a></li>
             <li>Hébergement par OVH</li>
           </ul>
         </div>
