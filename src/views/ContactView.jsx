@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import '../assets/styles/views/contact.css';
 import tick from '../assets/images/checkmark.png';
 
 const ContactView = () => {

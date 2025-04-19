@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const PlomberieView = () => {
     return(
@@ -12,8 +12,12 @@ const PlomberieView = () => {
                 <div className="title-gradient"></div>
             </div>
             <div className="content">
-                <h3>Lorem ipsum dolor</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, voluptas necessitatibus? Eum ducimus fugiat sit unde voluptatem labore odit, minus numquam deleniti laboriosam at quas quod, quidem esse, quasi vero.</p>
+                <p>
+                    <strong><b>BIGORD PLOMBERIE SERVICES</b></strong> propose des <strong><b>services de plomberie complets</b></strong>, allant de l'installation de systèmes d'alimentation en eau, de gaz, à la réparation des fuites et à la mise en place de solutions d’assainissement.
+                    <br />
+                    <br />
+                    Olivier Bigord intervient rapidement pour assurer un <strong>dépannage</strong> efficace, une <strong>rénovation</strong> ou l'<strong>installation de nouveaux équipements sanitaires</strong>, tout en garantissant un <strong>respect des normes de sécurité et de qualité</strong>.
+                </p>
             </div>
         </>
     );

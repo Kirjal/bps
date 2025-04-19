@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const ChauffageView = (props) => {
     return(
@@ -12,8 +12,12 @@ const ChauffageView = (props) => {
                 <div className="title-gradient"></div>
             </div>
             <div className="content">
-                <h3>Lorem ipsum dolor</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, voluptas necessitatibus? Eum ducimus fugiat sit unde voluptatem labore odit, minus numquam deleniti laboriosam at quas quod, quidem esse, quasi vero.</p>
+                <p>
+                    Pour vos besoins en <strong>chauffage</strong>, <strong><b>BIGORD PLOMBERIE SERVICES</b></strong> est spécialisé dans <strong><b>l’installation, l’entretien et la réparation de chaudières</b></strong>, ainsi que l'installation de <strong><b>systèmes de chauffage central et de planchers chauffants</b></strong>.
+                    <br />
+                    <br />
+                    Olivier Bigord veille à <strong>optimiser l'efficacité énergétique de vos installations</strong> pour garantir une chaleur agréable tout en <strong>respectant l’environnement</strong>. Que ce soit pour une intervention en urgence ou une rénovation, il met son expertise à votre service pour vous offrir des <strong>solutions fiables et performantes</strong>.
+                </p>
             </div>
         </>
     );

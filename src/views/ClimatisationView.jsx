@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const ClimatisationView = (props) => {
     return(
@@ -12,8 +12,12 @@ const ClimatisationView = (props) => {
                 <div className="title-gradient"></div>
             </div>
             <div className="content">
-                <h3>Lorem ipsum dolor</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, voluptas necessitatibus? Eum ducimus fugiat sit unde voluptatem labore odit, minus numquam deleniti laboriosam at quas quod, quidem esse, quasi vero.</p>
+                <p>
+                    L’entreprise propose également des <strong><b>services de climatisation et de ventilation mécanique contrôlée (VMC)</b></strong> pour améliorer votre confort intérieur.
+                    <br />
+                    <br />
+                    Olivier Bigord <strong>installe, entretient et dépanne vos systèmes de climatisation</strong> pour vous garantir un air frais et pur, quelle que soit la saison. Il s’assure également de la bonne performance de vos VMC, essentielles pour une qualité de l'air optimale et un contrôle efficace de l’humidité dans vos locaux.
+                </p>
             </div>
         </>
     );
