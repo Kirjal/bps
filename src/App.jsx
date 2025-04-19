@@ -1,4 +1,5 @@
 import logo from './assets/images/bps_logo_temp.png';
+import rge from './assets/images/bps_logo_temp.png';
 import './App.css';
 import { Link } from 'react-router-dom';
 import Routes from "./routes/Routes";
@@ -204,9 +205,9 @@ function App() {
               <Link to={URL.URL_CONTACT} onClick={()=>updateBubbleMode("contact")} className="nav-button">Contact</Link>
             </li>
           </ul>
+          <div className="sub-header-gradient"></div>
         </nav>
         <div className="yellow-bar"></div>
-        <div className="header-gradient"></div>
       </header>
       <main id="main" className="hidden">
         <div className="main-bg-gradient"></div>
@@ -231,6 +232,7 @@ function App() {
         <div className="footer-content">
           <div className="footer-logo-container">
             <img src={logo} className="footer-logo" alt="logo de l'entreprise"/>
+            <img src={rge} className="rge-logo" alt="logo RGE" />
           </div>
           {/**footer buttons have been disabled since the <nav> will always be visible or accessible anywhere on the website */}
           {/* <div className="footer-buttons">
@@ -238,11 +240,17 @@ function App() {
             <Link to={{pathname: URL_SERVICES, state: {updateBubbleMode}}} onClick={()=>updateBubbleMode("services")} className="nav-button">Services</Link>
             <Link to={URL_CONTACT} onClick={()=>updateBubbleMode("contact")} className="nav-button">Contact</Link>
           </div> */}
-          <div className="legal">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui autem architecto, sunt sequi labore rerum maxime tenetur dolorem nihil sapiente vitae commodi reiciendis. Eum provident modi et, quaerat nesciunt deleniti.
-            </p>
-          </div>
+          <p className="payment-methods">{"Moyens de paiement : virement bancaire, chèque, espèces (< 1 000 €), Paypal"}</p>
+          <ul className="legal">
+            <h3>Mentions légales :</h3>
+            <li><span>Entreprise :</span> BIGORD PLOMBERIE SERVICES SARL</li>
+            <li><span>Adresse :</span> EURL Bigord Plomberie Services 5 Rue Baudouin IX, 59 650 Villeneuve d'Ascq</li>
+            <li><span>N° SIRET :</span> 819 681 859 00024</li>
+            <li><span>N° d'assujettissement à la TVA :</span> FR44819681859</li>
+            <li><span>Dirigeant :</span> Olivier BIGORD</li>
+            <li>Site conçu par Alexandre Demontier EI : <a href="https://kirjal.fr" target="_blank">https://kirjal.fr</a></li>
+            <li>Hébergement par OVH</li>
+          </ul>
         </div>
       </footer>
     </div>

@@ -17,6 +17,8 @@
     --menu-button-hover: #485a80;
     --menu-bar-height: 4px;
     --menu-bar-width: 26px;
+    --sub-header-gradient: linear-gradient(0turn, #f5f5f500, #f5f5f5aa);
+    --header-gradient: linear-gradient(0turn, #f5f5f5aa, #f5f5f5 50px);
 
     /*titles*/
     --title-text: #485a80;
