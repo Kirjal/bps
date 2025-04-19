@@ -191,6 +191,8 @@ const ContactView = () => {
                     )}
                     
                 </Formik>
+                <p className="notice"><small>Formulaire assisté par Web3Forms. Les informations envoyées ne seront consultées que par Bigord Plomberie Services.</small></p>
+                <p className="notice"><b>N'hésitez pas à contacter votre assurance pour une éventuelle prise en charge !</b></p>
             </div>
         </>
         

@@ -253,3 +253,9 @@ label span:not(.business-check-title span){
     opacity: 0;
     right: -15px;
 }
+
+.notice{
+    margin-top: 30px;
+    text-align: center;
+    line-height: 1em;
+}
