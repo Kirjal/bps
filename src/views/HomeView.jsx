@@ -13,7 +13,7 @@ const HomeView = () => {
                 <div className="title-gradient"></div>
             </div>
             <div className="content">
-                <img src={photo} alt="Photo d'Olivier Bigord" className="photo" />
+                <img src={photo} alt="Olivier Bigord" className="photo" />
                 <div className="text-container">
                     <h3>Présentation d'Olivier Bigord - BIGORD PLOMBERIE SERVICES</h3>
                     <p>
