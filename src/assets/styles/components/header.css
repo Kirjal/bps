@@ -65,9 +65,27 @@ header .yellow-bar{
 
 #burger p{
     width: 60px;
-    padding-right: 10px;
+    padding-right: 5px;
     text-align: center;
     align-self: center;
+    opacity: 1;
+    transition: opacity 0.2s;
+    position: absolute;
+}
+
+#burger p.open{
+    opacity: 0;
+    width: 70px;
+    padding-right: 0;
+    padding-left: 5px;
+}
+
+#burger.burger-open p.open{
+    opacity: 1;
+}
+
+#burger.burger-open p:not(.open){
+    opacity: 0;
 }
 
 /* #burger.visible{

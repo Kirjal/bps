@@ -34,10 +34,11 @@ footer{
     max-height: 154px;
 }
 
-.rge-logo{
-    min-width: 60px;
+.qualibat-rge-logo{
+    min-width: 19.2mm;
     width: 15vw;
-    max-width: 120px;
+    max-width: 30mm;
+    margin: 0 20px 15px 10px;
 }
 
 footer .yellow-bar{
@@ -92,7 +93,10 @@ footer h3{
 
 .payment-methods{
     align-self: center;
+    text-align: center;
     padding: 20px;
+    flex: 1;
+    min-width: max(50%, 320px);
 }
 
 .legal{

@@ -68,14 +68,6 @@ footer{
   z-index: 1;
 }
 
-main{
-  min-width: 320px;
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  padding-top: 170px;
-}
-
 li{
   list-style: none;
 }
@@ -96,45 +88,6 @@ ul{
 }
 .footer-gradient{
   background: var(--footer-gradient);
-}
-
-/* transition on <main> when changing pages */
-
-main{
-  opacity: 1;
-  left: 0;
-}
-
-main.hidden{
-  opacity: 0;
-}
-
-main.transition{
-  transition: all 0.6s;
-}
-
-main.left{
-  left: -200px;
-}
-
-.title-fade{
-  display: none;
-}
-
-.title-outline{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  border-radius: 0 200px 200px 0;
-  box-shadow: inset -3px -5px var(--title-outline);
-}
-
-@media screen and (min-width: 769px){
-  main{
-    width: 95%;
-  }
 }
 
 /** stuff that was there by default from react ***********************************************/

@@ -1,5 +1,5 @@
 import logo from './assets/images/bps_logo_temp.png';
-import rge from './assets/images/bps_logo_temp.png';
+import rge from './assets/images/LogoQualibatRGE_JPEG.jpg';
 import './App.css';
 import { Link } from 'react-router-dom';
 import Routes from "./routes/Routes";
@@ -19,12 +19,18 @@ function App() {
     const header = document.getElementById("header");
     const main = document.getElementById("main");
 
-    bubbleContainer.classList.remove("services", "contact");
+    bubbleContainer.classList.remove("home", "services", "contact");
     bubbleContainer.classList.add(value);
     if(value === "contact" && contactButton.classList.contains("visible")){
       contactButton.classList.remove("visible");
-    } else if(value !== "contact" && !contactButton.classList.contains("visible")){
+    }else if(value !== "contact" && !contactButton.classList.contains("visible")){
       contactButton.classList.add("visible");
+    };
+
+    if(value === "home"){
+      main.classList.add("home");
+    }else{
+      main.classList.remove("home");
     }
 
     header.classList.contains("nav-open") && toggleNav();
@@ -175,6 +181,7 @@ function App() {
           <div className="menu-bar"></div>
           <div className="menu-bar"></div>
           <p>Menu</p>
+          <p className="open">Retour</p>
         </div>
         <ul className="nav-contact-info">
           <li><span>Ghislaine :</span> 06 33 97 97 49</li>
@@ -232,7 +239,7 @@ function App() {
         <div className="footer-content">
           <div className="footer-logo-container">
             <img src={logo} className="footer-logo" alt="logo de l'entreprise"/>
-            <img src={rge} className="rge-logo" alt="logo RGE" />
+            <img src={rge} className="qualibat-rge-logo" alt="logo Qualibat-RGE" />
           </div>
           {/**footer buttons have been disabled since the <nav> will always be visible or accessible anywhere on the website */}
           {/* <div className="footer-buttons">
