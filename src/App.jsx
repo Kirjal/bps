@@ -255,8 +255,7 @@ function App() {
             <li><span>N° SIRET :</span> 819 681 859 00024</li>
             <li><span>N° d'assujettissement à la TVA :</span> FR44819681859</li>
             <li><span>Dirigeant :</span> Olivier BIGORD</li>
-            <li><span>LinkedIn :</span>{/*MISSING*/}</li>
-            <li><span>Facebook :</span>{/*MISSING*/}</li>
+            <li><span>Facebook :</span> <a href="https://www.facebook.com/BIGORDPLOMBERIE" target="_blank" rel="noreferrer">Bigord Plomberie Services</a></li>
             <li>Site conçu par Alexandre Demontier EI : <a href="https://kirjal.fr" target="_blank" rel="noreferrer">https://kirjal.fr</a></li>
             <li>Hébergement par OVH</li>
           </ul>

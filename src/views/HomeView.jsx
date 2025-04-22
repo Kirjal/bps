@@ -1,5 +1,5 @@
 import React from "react";
-import photo from "../assets/images/Olivier_.png";
+import photo from "../assets/images/Olivier.png";
 
 const HomeView = () => {
     return(
@@ -8,7 +8,7 @@ const HomeView = () => {
                 <div className="title">
                     <div className="title-fade"></div>
                     <div className="title-outline"></div>
-                    <h1>Services de plomberie dans la métropole lilloise</h1>
+                    <h1>Services spécialisés dans les Hauts-de-France</h1>
                 </div>
                 <div className="title-gradient"></div>
             </div>

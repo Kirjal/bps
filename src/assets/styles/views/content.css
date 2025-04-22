@@ -146,4 +146,15 @@ main.left{
         width: calc(90% - var(--photo-width) / 2);
         margin-left: auto;
     }
+
+    .photo_exemple{
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top: 150px;
+        left: -220px;
+        background-image: url("../../images/image_pour_accueil.png");
+        background-size: cover;
+        background-position: center;
+    }
 }
