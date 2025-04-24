@@ -208,7 +208,7 @@ label span:not(.business-check-title span){
 .button-container{
     position: relative;
     width: 160px;
-    margin-left: auto;
+    margin: 15px 0 0 auto;
 }
 
 .button-container button{

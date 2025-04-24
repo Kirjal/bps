@@ -18,6 +18,7 @@ function App() {
     const contactButton = document.getElementById("contact-button");
     const header = document.getElementById("header");
     const main = document.getElementById("main");
+    const app = document.getElementById("App");
 
     bubbleContainer.classList.remove("home", "services", "contact");
     bubbleContainer.classList.add(value);
@@ -32,6 +33,8 @@ function App() {
     }else{
       main.classList.remove("home");
     }
+
+    app.scrollTo(0, 0);
 
     header.classList.contains("nav-open") && toggleNav();
 

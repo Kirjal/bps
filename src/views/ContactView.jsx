@@ -5,10 +5,61 @@ import tick from '../assets/images/checkmark.png';
 
 const ContactView = () => {
 
+    const access_key = "";
+
     const [optionsVisibility, setOptionsVisibility] = useState(false);
 
-    const handleSubmit = (values) => {
-        console.log(values);
+    /**this function's role is to create a FormData to send to web3forms as it is the type of data they need */
+    const handleSubmit = async (values) => {
+
+        const formData =  new FormData();
+        const add = (key, value) => formData.append(key, value);
+
+        if(values.business){
+            values.businessName && add("Nom de l'entreprise :", values.businessName);
+            values.siret ? add("N°SIRET :", values.siret) : add("N°SIRET :", "Non renseigné");
+            values.name && add("Personne à contacter :", values.name);
+        }
+        if(!values.business){
+            values.name && add("Nom :", values.name);
+        }
+
+        values.phone && add("N° de téléphone :", values.phone);
+
+        values.email && add("Adresse mail :", values.email);
+        
+        const fullAddress = (values.address && values.address + " ") + (values.zipcode && values.zipcode + " ") + (values.town && values.town);
+        values.town && values.zipcode && add("Adresse :", fullAddress);
+
+        values.emergency && add("Niveau d'urgence :", values.emergency);
+
+        values.info && add("Détails supplémentaires :", values.info);
+        
+        const client_name = values.business ? (values.business && values.businessName) : values.name
+
+        /**email subject */
+        const subject = `${client_name} souhaite prendre contact`
+        add("subject", subject);
+
+        /**from_name is the name given as sender of the mail */
+        add("from_name", client_name);
+
+        /**web3forms access key */
+        add("access_key", access_key);
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            /**logic to open success modal with button to return to the home page */
+        } else {
+            console.log(data.message ? data.message : "Une erreur s'est produite.");
+            /**logic to open error modal */
+        }
     }
 
 
@@ -66,7 +117,7 @@ const ContactView = () => {
                     onSubmit={handleSubmit}
                 >
                     {({ values, setFieldValue, errors, touched, handleSubmit }) => (
-                        <Form action="">
+                        <Form>
                             <div className="input-container business-check-container">
 
                                 <div className="business-check-title">
@@ -87,7 +138,9 @@ const ContactView = () => {
                                     <div className="business-options">
 
                                         <label htmlFor="businessName">Nom de l'entreprise *</label>
-                                        <Field type="text" name="businessName" id="businessName" placeholder="Nom de l'entreprise" className="form-input" />
+                                        <Field type="text" name="businessName" id="businessName" placeholder="Nom de l'entreprise"
+                                            className={`form-input ${errors.businessName && touched.businessName ? " invalid-input" : ""}`}
+                                        />
                                         <span className="error"><ErrorMessage name="businessName" /></span>
 
                                         <label htmlFor="siret">n° SIRET</label>
