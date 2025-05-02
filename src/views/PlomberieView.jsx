@@ -1,9 +1,10 @@
 import React from "react";
+import image_link from "../assets/images/image_pour_accueil.png";
 
 const PlomberieView = () => {
     return(
         <>
-            <div className="photo_exemple"></div>
+            <img className="photo_exemple" src={image_link}/>
             <div className="title-container services-title">
                 <div className="title">
                     <div className="title-fade"></div>

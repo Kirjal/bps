@@ -251,11 +251,106 @@ label span:not(.business-check-title span){
 
 .button-container:hover button ~ .contact-yellow-arrow{
     opacity: 0;
-    right: -15px;
+    right: -20px;
 }
 
 .notice{
     margin-top: 30px;
     text-align: center;
     line-height: 1em;
+}
+
+#formResultModal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--form-modal-overlay);
+    opacity: 1;
+    transition: all 0.3s;
+    z-index: 1;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: sticky;
+    top: 50vh;
+    transform: translateY(-50%);
+    width: max(50vw, 310px);
+    margin: auto;
+    padding: min(max(15px, 5vw), 25px);
+    border-radius: min(50px, 10vw);
+    background-color: var(--form-modal-background);
+}
+
+#formResultModal h2{
+    font-style: italic;
+    font-size: 1.8em;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+#formResultModal p{
+    font-size: 1.1em;
+    width: 100%;
+    height: auto;
+}
+
+#formResultModal h2.success, #formResultModal p.success{
+    color: var(--text-success);
+}
+
+#formResultModal h2.error, #formResultModal p.error{
+    color: var(--text-error);
+}
+
+#formResultModal .button-container{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1em;
+    width: auto;
+    height: 40px;
+    margin: 0;
+}
+
+#formResultModal button{
+    width: 200px;
+}
+
+#formResultModal .contact-yellow-arrow{
+    top: -15px;
+    right: -20px;
+}
+
+#formResultModal .contact-blue-arrow{
+    top: -15px;
+}
+
+#formResultModal .button-container:hover .contact-yellow-arrow{
+    right: -55px;
+}
+
+#formResultModal.success h2.error, #formResultModal.success p.error, #formResultModal.success .button-container.error{
+    display: none
+}
+
+#formResultModal.error h2.success, #formResultModal.error p.success, #formResultModal.error .button-container.success{
+    display: none;
+}
+
+#formResultModal.hidden{
+    display: none;
+}
+
+#formResultModal.transitioning{
+    opacity: 0;
 }
