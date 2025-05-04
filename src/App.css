@@ -1,13 +1,25 @@
 @import url("./constants/variables.css");
 @import url("./assets/styles/components/bubble-container.css");
+@import url("./assets/styles/components/header.css");
+@import url("./assets/styles/components/footer.css");
+@import url("./assets/styles/components/contact-button.css");
+@import url("./assets/styles/views/content.css");
+@import url("./assets/styles/views/contact.css");
 
 /***** CSS RESET ***************************/
 
 *, *::before, *::after{
   box-sizing: border-box;
 }
+a{
+  text-decoration: none;
+}
 *{
   margin: 0;
+}
+button{
+  border: 0;
+  box-shadow: none;
 }
 body {
   line-height: 1.5; /* helps with dyslexia */
@@ -36,33 +48,32 @@ h1, h2, h3, h4, h5, h6 {
 
 /*********************************************/
 .App{
-  font-family: Verdana, Helvetica, Tahoma, sans-serif;
+  font-family: Helvetica, Verdana, Tahoma, sans-serif;
   font-size: 1em;
   color: var(--base-text);
   background-color: var(--background);
   overflow-x: hidden;
+  height: 100vh;
 }
 
-.gradient-test{
-  height: 200px;
-  width: 100%;
-  max-width: 320px;
-  background: var(--title-gradient);
-}
-
-h1, h2{
-  text-align: center;
+header, main, footer{
   position: relative;
-  left: -4px;
-  font-size: 1.2em;
-  font-weight: bold;
-  width: 100%;
-  max-width: 350px;
-  color: var(--title-text);
-  background-color: var(--title-background);
-  border-radius: 0 200px 200px 0;
-  box-shadow: 4px 6px var(--title-outline);
-  padding: 20px 20px 8px 4px;
+}
+
+header{
+  z-index: 2;
+}
+
+footer{
+  z-index: 1;
+}
+
+li{
+  list-style: none;
+}
+
+ul{
+  padding: 0;
 }
 
 .yellow-line{
@@ -79,12 +90,11 @@ h1, h2{
   background: var(--footer-gradient);
 }
 
-
-/** stuff that was there by default from react **/
+/** stuff that was there by default from react ***********************************************/
 
 /*.App {
   text-align: center;
-}*/
+}
 
 .App-logo {
   height: 40vmin;
@@ -97,7 +107,7 @@ h1, h2{
   }
 }
 
-/*.App-header {
+.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -106,11 +116,11 @@ h1, h2{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}*/
+}
 
-/*.App-link {
+.App-link {
   color: #61dafb;
-}*/
+}
 
 @keyframes App-logo-spin {
   from {
@@ -119,4 +129,4 @@ h1, h2{
   to {
     transform: rotate(360deg);
   }
-}
+}*/

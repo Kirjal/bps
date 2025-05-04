@@ -3,56 +3,91 @@
 .bubble-container{
     margin: auto;
     overflow: hidden;
-}
-
-.bubble-container > div{
     position: fixed;
     top: 0;
-    left: calc(50vw - 100px);
-    width: 200px;
+    width: 300px;
+    left: calc(50vw - 150px);
+    --height-front: 8000px;
+    --height-mid: 6000px;
+    --height-back: 4000px;
 }
 
+/*gradients above and below bubbles display*/
+.bg-gradients{
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: calc(50vw - 150px);
+    z-index: 10;
+    background: linear-gradient(#f5f5f5ff, #f5f5f500 20%, #f5f5f500 80%, #f5f5f5ff);
+}
+
+/*this one is actually located in <main> but relates to bubbles display as it needs to not show bubbles directly under the title*/
+.main-bg-gradient{
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#f5f5f5ff, #f5f5f500 300px, #f5f5f500 calc(100% - 100px), #f5f5f5ff);
+}
+
+.bubble-container .front, .bubble-container .mid, .bubble-container .back{
+    position: fixed;
+    width: 300px;
+    transition: top 5s cubic-bezier(0.1, 0.8, 0, 1);
+    top: 0;
+}
+
+/*bubbles offset depending on current displayed page*/
 .bubble-container .front{
-    height: 3000px;
+    height: var(--height-front);
 }
 
 .bubble-container .mid{
-    height: 2500px;
+    height: var(--height-mid);
 }
 
 .bubble-container .back{
-    height: 2000px;
-}
-
-.bubble-container.home > div{
-    top: 0;
+    height: var(--height-back);
 }
 
 .bubble-container.services > .front{
-    top: calc(50vh - 1500px);
+    top: calc(50vh - (var(--height-front) / 2));
 }
 .bubble-container.services > .mid{
-    top: calc(50vh - 1250px);
+    top: calc(50vh - (var(--height-mid) / 2));
 }
 .bubble-container.services > .back{
-    top: calc(50vh - 1000px);
+    top: calc(50vh - (var(--height-back) / 2));
 }
 
 .bubble-container.contact > .front{
-    top: calc(100vh - 3000px);
+    top: calc(100vh - var(--height-front));
 }
 .bubble-container.contact > .mid{
-    top: calc(100vh - 2500px);
+    top: calc(100vh - var(--height-mid));
 }
 .bubble-container.contact > .back{
-    top: calc(100vh - 2000px);
+    top: calc(100vh - var(--height-back));
 }
-  
-/*.bubble{
+
+/*bubble style*/
+.bubble{
     position: absolute;
-    top: 0;
-    height: 100px;
-    width: 100px;
     border-radius: 50%;
     background-color: var(--bubble-color);
-}*/
+}
+.bubble_front{
+    height: 175px;
+    width: 175px;
+}
+.bubble_mid{
+    height: 150px;
+    width: 150px;
+}
+.bubble_back{
+    height: 125px;
+    width: 125px;
+}

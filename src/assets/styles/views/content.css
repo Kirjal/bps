@@ -1,0 +1,170 @@
+@import url("../../../constants/variables.css");
+
+.title-container{
+    position: absolute;
+    top: 30px;
+    right: calc(50% - 160px);
+    overflow: hidden;
+    width: calc(50% + 160px);
+ }
+.title-container.services-title, .title-container.contact-title{
+    padding-top: 1em;
+}
+  
+.title{
+    background-color: var(--title-background);
+    border-radius: 0 200px 200px 0;
+    position: relative;
+    left: -4px;
+}
+  
+.title-gradient{
+    height: 80px;
+    width: min(320px, 80%);
+    background: var(--title-gradient);
+}
+
+.title-outline{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 0 200px 200px 0;
+  box-shadow: inset -3px -5px var(--title-outline);
+}
+
+.title-fade{
+    display: none;
+}
+
+h1, h2{
+    text-align: center;
+    margin-right: 0;
+    margin-left: auto;
+    color: var(--title-text);
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 320px;
+    padding: 16px 20px 16px 4px;
+}
+
+main{
+  min-width: 320px;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 170px;
+}
+
+.photo{
+    display: none;
+    width: var(--photo-width);
+    position: absolute;
+    top: 0;
+    left: calc(var(--photo-width) / 1.5 - var(--photo-width));
+}
+  
+main h3{
+    color: var(--title-text);
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px auto;
+}
+  
+main p{
+    color: var(--base-text);
+}
+
+main strong{
+    font-weight: inherit;
+}
+
+.content{
+    position: relative;
+    padding: 20px 10px 30px;
+    margin: 0 10px 30px;
+    background-color: var(--content-background);
+    /*border-radius: 15px;*//*border-radius is actually not useful at all since we can't even see the corners of that box*/
+    --photo-width: 500px;
+}
+
+
+/* transition on <main> when changing pages */
+main{
+  opacity: 1;
+  left: 0;
+}
+
+main.hidden{
+  opacity: 0;
+}
+
+main.transition{
+  transition: all 0.6s;
+}
+
+main.left{
+  left: -200px;
+}
+
+.photo_exemple{
+    width: 200px;
+    position: absolute;
+    top: 150px;
+    left: -220px;
+    display: none;
+}
+
+.ma-prime-renov{
+    display: block;
+    width: 280px;
+    box-shadow: 0 0 5px 5px #fff;
+    margin: 20px auto 30px;
+}
+
+@media screen and (max-width: 768px) {
+    main{
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .title-fade{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: calc(100% - 320px);
+        background: linear-gradient(0.25turn, #f5f5f5, #f5f5f500);
+        z-index: 1;
+    }
+    
+    .title-gradient{
+        width:max(320px, 90%);
+        height: 40px;
+        margin: 0 50px 0 auto;
+        background: var(--title-gradient-large);
+    }
+
+    main{
+      width: 95%;
+    }
+
+    main.home .photo{
+        display: block;
+    }
+
+    main.home .text-container{
+        width: calc(90% - var(--photo-width) / 2);
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 1650px) {
+    .photo_exemple{
+        display: block;
+    }
+}

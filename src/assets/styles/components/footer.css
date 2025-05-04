@@ -1,0 +1,125 @@
+@import url(../../../constants/variables.css);
+
+footer{
+    width: 100vw;
+    background-color: var(--footer-background);
+    color: var(--footer-text);
+}
+
+.footer-content{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 30px 0;
+    height: 100%;
+    width: 100%;
+}
+
+.footer-logo-container{
+    padding: 10px;
+    background-color: var(--logo-background);
+    box-shadow: inset 0px 0px 10px 5px var(--background);
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo{
+    min-height:83px;
+    min-width:162px;
+    width: 40vw;
+    height: 20.48vw;
+    max-width: 300px;
+    max-height: 154px;
+}
+
+.qualibat-rge-logo{
+    min-width: 19.2mm;
+    width: 15vw;
+    max-width: 30mm;
+    margin: 0 20px 15px 10px;
+}
+
+footer .yellow-bar{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 5px;
+    background-color: var(--bps-yellow);
+}
+
+/*footer navigation buttons have been disabled since the nav will always be accessible anywhere on the website*/
+/*.footer-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    flex: 1;
+    align-items: center;
+    padding-top: 15px;
+    min-height: 83px;
+    height: 20.48vw;
+    max-height: 154px;
+}
+
+.footer-buttons .nav-button{
+    min-width: 100px;
+    width: 80%;
+    max-width: 200px;
+    text-align: center;
+    margin: 0;
+    padding: 3px 15px 0;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-bottom: 3px;
+    align-content: center;
+    transition: all 0.2s;
+    background-color: var(--footer-link-background);
+    color: var(--footer-link-text);
+    cursor: pointer;
+}
+
+.footer-buttons .nav-button:hover{
+    color: var(--footer-link-hover-text);
+    background-color: var(--footer-link-hover-background);
+}*/
+
+footer h3{
+    margin: 0 0 10px 20px;
+}
+
+.payment-methods{
+    align-self: center;
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    min-width: max(50%, 320px);
+}
+
+.legal{
+    padding: 0 30px;
+    margin: 30px auto 0;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.legal{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.legal li span{
+    font-weight: bold;
+}
+
+.legal a{
+    color: var(--bps-light-blue);
+}
+
+.legal a:visited{
+    color: var(--bps-yellow);
+}

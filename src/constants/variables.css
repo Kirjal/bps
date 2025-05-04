@@ -4,28 +4,39 @@
     /*structure elements*/
     --background: #f5f5f5;
     --footer-background: #1d396c;
-    --header-gradient: linear-gradient(0.5turn, #f5f5f5, #f5f5f500);
-    --footer-gradient: linear-gradient(1turn, #f5f5f5, #f5f5f500);
     --bps-yellow: #ffad05;
     --bps-light-blue: #b3d3f8;
     --bubble-color: #bdf8;
 
     /*menu elements*/
+    --burger-background: #f5f5f5;
     --burger-button: #1f396c;
     --burger-text: #1f396c;
     --menu-background: #1f396c;
     --menu-text: #f5f5f5;
     --menu-button-hover: #485a80;
+    --menu-bar-height: 4px;
+    --menu-bar-width: 26px;
+    --sub-header-gradient: linear-gradient(0turn, #f5f5f500, #f5f5f5aa);
+    --header-gradient: linear-gradient(0turn, #f5f5f5aa, #f5f5f5 50px);
 
     /*titles*/
     --title-text: #485a80;
     --title-background: #f5f5f5;
     --title-outline: #b3d3f8;
-    --title-gradient: linear-gradient(0.45turn, #b3d3f855 0%, #f5f5f500 30%);
+    --title-gradient: linear-gradient(0.47turn, #b3d3f8 0%, #f5f5f500 40%);
+    --title-gradient-large: radial-gradient(ellipse at top, #b3d3f8 0%, #f5f5f500 65%);
 
     /*content*/
     --base-text: #1f396c;
-    --text-background: #f5f5f588;
+    --light-text: #f5f5f5;
+    --content-background: #f5f5f588;
+    --footer-text: #f5f5f5;
+    --logo-background: #ffffff;
+    --text-success: #b9dd65;
+    --text-error: #f76;
+    --form-modal-overlay: #f5f5f588;
+    --form-modal-background: #1f396c;
 
     /*buttons*/
     --button-base-outline: #ffad05;
@@ -36,6 +47,20 @@
     --button-arrow-outline-base: #ffad05;
     --button-arrow-outline-hover: #b3d3f8;
     --button-emphasis-background: #f5f5f5;
+
+    /*navigation*/
+    --menu-link-text: #485a80;
+    --menu-link-background: #f5f5f5;
+    --menu-link-hover-text: #f5f5f5;
+    --menu-link-hover-background: #1f396c;
+    --hidden-menu-link-text: #f5f5f5;
+    --hidden-menu-link-background: #2f497c;
+    --hidden-menu-link-hover-text: #485a80;
+    --hidden-menu-link-hover-background: #f5f5f5;
+    --footer-link-text: #f5f5f5;
+    --footer-link-background : #2f497c;
+    --footer-link-hover-text: #485a80;
+    --footer-link-hover-background: #f5f5f5;
 
     /*form inputs*/
     --input-background: #f5f5f5;

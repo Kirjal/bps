@@ -1,0 +1,326 @@
+@import url(../../../constants/variables.css);
+
+header{
+    background-color: var(--background);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+}
+
+header .light-blue-bar{
+    background-color: var(--bps-light-blue);
+    height: 4px;
+    width: 75%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header .yellow-bar{
+    background-color: var(--bps-yellow);
+    height: 5px;
+    width: 65%;
+    position: absolute;
+    top: 140px;
+    right: 0;
+    transition: all 0.3s;
+}
+
+.header-logo-container{
+    padding: 10px;
+    height: 145px;
+    width: 263px;
+    background-color: var(--logo-background);
+    box-shadow: inset 0px 0px 10px 5px var(--background);
+    transition: all 0.3s;
+    align-self: flex-start;
+}
+
+.header-logo{
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+/* commented parts were used when the burger menu had to only show up on mobile */
+
+#burger{
+    display: flex;
+    justify-content: right;
+    height: 50px;
+    width: 100px;
+    background-color: var(--burger-background);
+    border-radius: 15px 0 0 15px;
+    position: fixed;
+    /*top: -40px;*/
+    top: 30px;
+    right: 0px;
+    transition: all 0.5s;
+    /*opacity: 0;*/
+    opacity: 1;
+    z-index: 200;
+    cursor: pointer;
+}
+
+#burger p{
+    width: 60px;
+    padding-right: 5px;
+    text-align: center;
+    align-self: center;
+    opacity: 1;
+    transition: opacity 0.2s;
+    position: absolute;
+}
+
+#burger p.open{
+    opacity: 0;
+    width: 70px;
+    padding-right: 0;
+    padding-left: 5px;
+}
+
+#burger.burger-open p.open{
+    opacity: 1;
+}
+
+#burger.burger-open p:not(.open){
+    opacity: 0;
+}
+
+/* #burger.visible{
+    top: 30px;
+    opacity: 1;
+} */
+
+.menu-bar{
+    height: var(--menu-bar-height);
+    width: var(--menu-bar-width);
+    --x-offset: calc(var(--menu-bar-width) / 2);
+    --y-offset: calc(var(--menu-bar-height) / 2);
+    border-radius: var(--menu-bar-width);
+    background-color: var(--burger-button);
+    transition: all 0.3s;
+    position: absolute;
+    left: calc(25% - var(--x-offset));
+}
+
+.menu-bar:first-child{
+    top: calc(30% - var(--y-offset));
+}
+
+.menu-bar:nth-child(2){
+    top: calc(50% - var(--y-offset));
+}
+
+.menu-bar:nth-child(3){
+    top: calc(70% - var(--y-offset));
+}
+
+#burger.burger-open .menu-bar:first-child{
+    top: calc(50% - var(--y-offset));
+    rotate: 0.375turn;
+}
+
+#burger.burger-open .menu-bar:nth-child(2){
+    opacity: 0;
+    width: var(--x-offset);
+}
+
+#burger.burger-open .menu-bar:nth-child(3){
+    top: calc(50% - var(--y-offset));
+    rotate: -0.375turn;
+}
+
+nav{
+    padding: 3px 5px 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul{
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav .nav-button{
+    display: block;
+    width: 100%;
+    max-width: 230px;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    padding: 1px 15px 0;
+    font-weight: bold;
+    border-radius: 30px;
+    align-content: center;
+    color: var(--menu-link-text);
+    background-color: var(--menu-link-background);
+    cursor: pointer;
+}
+
+nav .nav-button:hover{
+    color: var(--menu-link-hover-text);
+    background-color: var(--menu-link-hover-background)
+}
+
+.nav-contact-info{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    padding: 5px 10px;
+    width: 320px;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 145px;
+}
+
+.nav-contact-info span{
+    font-weight: bold;
+}
+
+.sub-header-gradient{
+    display: none;
+    height: 15px;
+    width: 100vw;
+    background: var(--sub-header-gradient);
+    position: absolute;
+    top: 100%;
+}
+
+@media screen and (max-width: 768px){
+    header{
+        height: 110px;
+    }
+
+    header .yellow-bar{
+        top: 108px;
+    }
+    
+    .header-logo-container{
+        height: 103px;
+        width: 182px;
+    }
+
+    nav{
+        transition: all 0.3s;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 99;
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--menu-background);
+        padding: 20px;
+    }
+
+    nav ul{
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    
+    .nav-open nav{
+        right: 0;
+    }
+
+    .nav-contact-info{
+        position: fixed;
+        width: 100vw;
+        top: 60px;
+        right: -100%;
+        color: var(--light-text);
+        z-index: 100;
+    }
+
+    .nav-contact-info li{
+        width: 300px;
+        align-self: center;
+    }
+
+    .nav-open .nav-contact-info{
+        right: 0;
+    }
+    
+    nav ul li{
+        height: 35px;
+        width: 260px;
+    }
+
+    nav/*.hidden-menu*/ .nav-button{
+        background-color: var(--hidden-menu-link-background);
+        color: var(--hidden-menu-link-text);
+        padding: 1px 15px 0;
+        margin: 0 5px 3px;
+        border-radius: 30px;
+        transition: all 0.2s;
+        max-width: auto;
+    }
+    
+    nav/*.hidden-menu*/ .nav-button:hover{
+        background-color: var(--hidden-menu-link-hover-background);
+        color: var(--hidden-menu-link-hover-text);
+    }
+}
+
+@media screen and (min-width: 769px){
+    header{
+        background: var(--header-gradient);
+    }
+
+    .nav-gradient{
+        display: block;
+    }
+
+    .sub-header-gradient{
+        display: block;
+    }
+
+    header.small{
+        position: sticky;
+        top: 0;
+    }
+    
+    header.small .header-logo-container{
+        height: 83px;
+        width: 142px;
+    }
+
+    header.small .yellow-bar{
+        top:81px;
+    }
+
+    header.small .nav-contact-info{
+        height: 83px;
+    }
+
+    nav{
+        flex-flow: row wrap;
+    }
+
+    #burger{
+        display: none;
+    }
+
+    nav .nav-button{
+        transition: all 0.2s;
+    }
+
+    /*i have no idea why this exact set of properties works exactly how i intended the nav to be displayed, but i won't complain*/
+    nav ul li{
+        min-width: 25%;
+        width: 230px;
+        flex: 1;
+        height: 32px;
+    }
+}
