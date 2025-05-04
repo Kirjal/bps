@@ -1,8 +1,10 @@
 import React from "react";
+import image_link from "../assets/images/renovation.png";
 
 const RenovationView = (props) => {
     return(
         <>
+            <img className="photo_exemple" alt ="" src={image_link}/>
             <div className="title-container services-title">
                 <div className="title">
                     <div className="title-fade"></div>

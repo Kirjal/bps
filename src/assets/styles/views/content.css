@@ -116,6 +116,13 @@ main.left{
     display: none;
 }
 
+.ma-prime-renov{
+    display: block;
+    width: 280px;
+    box-shadow: 0 0 5px 5px #fff;
+    margin: 20px auto 30px;
+}
+
 @media screen and (max-width: 768px) {
     main{
         width: 100%;

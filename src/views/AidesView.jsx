@@ -1,4 +1,5 @@
 import React from "react";
+import image_link from "../assets/images/logo_ma_prime_renov.jpg";
 
 const AidesView = (props) => {
     return(
@@ -12,6 +13,7 @@ const AidesView = (props) => {
                 <div className="title-gradient"></div>
             </div>
             <div className="content">
+                <img className="ma-prime-renov" alt="Logo de Ma Prime Rénov'" src={image_link}/>
                 <p>
                     <strong><b>Aides à la rénovation énergétique : profitez-en !</b></strong>
                     <br />
