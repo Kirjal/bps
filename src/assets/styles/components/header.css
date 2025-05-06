@@ -228,6 +228,7 @@ nav .nav-button:hover{
         flex-flow: column nowrap;
         justify-content: flex-end;
         gap: 10px;
+        padding-bottom: 50px;
     }
     
     .nav-open nav{
@@ -237,7 +238,7 @@ nav .nav-button:hover{
     .nav-contact-info{
         position: fixed;
         width: 100vw;
-        top: 60px;
+        top: 20px;
         right: -100%;
         color: var(--light-text);
         z-index: 100;
