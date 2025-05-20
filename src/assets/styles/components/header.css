@@ -228,7 +228,7 @@ nav .nav-button:hover{
         flex-flow: column nowrap;
         justify-content: flex-end;
         gap: 10px;
-        padding-bottom: 50px;
+        padding-bottom: 70px;
     }
     
     .nav-open nav{

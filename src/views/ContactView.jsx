@@ -104,7 +104,7 @@ const ContactView = () => {
                 <div className="title-gradient"></div>
             </div>
             <div className="content form-content">
-                <p className="notice">Les champs marqués d'un astérique (*) sont obligatoires.</p>
+                <p className="notice">Les champs marqués d'un astérsique (*) sont obligatoires.</p>
                 <Formik
                     initialValues={{
                         name: "",
