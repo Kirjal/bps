@@ -259,6 +259,7 @@ function App() {
             <li><span>N° d'assujettissement à la TVA :</span> FR44819681859</li>
             <li><span>Dirigeant :</span> Olivier BIGORD</li>
             <li><span>Facebook :</span> <a href="https://www.facebook.com/BIGORDPLOMBERIE" target="_blank" rel="noreferrer">Bigord Plomberie Services</a></li>
+            <li><span>LinkedIn :</span> <a href="https://www.linkedin.com/company/bps-plomberie/" target="_blank" rel="noreferrer">Bigord Plomberie Services</a></li>
             <li>Site conçu par Alexandre Demontier EI : <a href="https://kirjal.fr" target="_blank" rel="noreferrer">https://kirjal.fr</a></li>
             <li>Hébergement par OVH</li>
           </ul>
